@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  height: 15vh;
+  align-items: center;
+  display: flex;
+  background-color: #a9a9ac;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.img_logo{
+  height: 15vh;
+  padding: 5px;
+} 
+
+.container {
+  width: 80%;
+  margin: auto;
+  display: flex;
+}
+
+header .container {
+  justify-content: space-between;
+}
+
+header a {
+  text-decoration: none;
+  font-size: larger;
+  color: black;
+}
+
+.agora {
+  font-weight: 800;
+  font-size: larger;
+}
+
+.icon {
+  width: 30px;
+}
+
+.navbar {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+}
+
+/* Banner */
+
+section {
+  height: fit-content;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 90vh;
+  background-color: #a9a9ac;
+  color: white;
+}
+
+section .home_container {
+  justify-content: center;
+  align-items: center;
+}
+
+.home_container.text_container {
+  height: 75vh;
+  width: 40%;
+  /* background-color: #1624e7; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.home_container.img_container {
+  height: 80%;
+  width: 40%;
+}
+
+.home_container .img {
+  height: 100%;
+  width: 100%;
+  border-radius: 150px;
+}
+
+.home_container.quiz_container {
+  height: 70vh;
+  width: 80%;
+  border-radius: 50px;
+  background-color: #f52323;
+}
+
+/* footer */
+
+footer {
+  background-color: #ffffff;
+  height: 15vh;
+  display: flex;
+  font-size: 15px;
+}
+
+footer .container {
+  justify-content: center;
+}
