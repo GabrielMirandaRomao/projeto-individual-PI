@@ -43,11 +43,11 @@
           </div>
           <div>
             <label for="">Idade</label><br />
-            <input type="text" />
+            <input type="number" min="1" />
           </div>
           <div>
             <label for="">Email</label><br />
-            <input type="text" />
+            <input type="email" />
           </div>
           <div>
             <label for="">Senha</label><br />
@@ -57,25 +57,31 @@
             <label for="">Confirmar senha</label><br />
             <input type="text" />
           </div>
-          <div>
-            Album favorito
-            <select name="" id="">
-              <option value=""></option>
-              <option value=""></option>
-              <option value=""></option>
-              <option value=""></option>
-              <option value=""></option>
-              <option value=""></option>
-              <option value=""></option>
-              <option value=""></option>
-              <option value=""></option>
-              <option value=""></option>
+          <div class="select_container">
+            <span> Album favorito</span>
+            <select name="" id="album_favorito">
+              <option value="1">Please Please Me</option>
+              <option value="2">With The Beatles</option>
+              <option value="3">A Hard Day's Night</option>
+              <option value="4">Beatles For Sale</option>
+              <option value="5">Help!</aoption>
+              <option value="6">Rubber Soul</option>
+              <option value="7">Revolver</option>
+              <option value="8">Sgt.Pepper's Lonely Hearts Club Band</option>
+              <option value="9">Magical Mystery Tour</option>
+              <option value="10">The Beatles - White album</option>
+              <option value="11">Yellow Submarine</option>
+              <option value="12">Abbey Road</option>
+              <option value="13">Let It Be</option>
             </select>
+            <span class="custom_arrow"></span>
           </div>
         </form>
         <button>submit</button>
       </div>
+      <div class="banner_cadastro"></div>
     </section>
+
 
     <footer>
       <div class="container">footer</div>

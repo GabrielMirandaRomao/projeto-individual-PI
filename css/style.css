@@ -24,13 +24,19 @@ header {
 
 header.sticky {
   padding: 5px 100px;
-  background: #00000009;
-  height: 10vh;
+  background: #00000004;
+  height: 12vh;
 }
 
 span .img_navbar {
   height: 10vh;
   border-radius: 50px;
+}
+
+header.sticky span .img_navbar {
+  height: 10vh;
+  border-radius: 50px;
+  background-color: #000000;
 }
 
 header span .img_navbar {
@@ -100,10 +106,14 @@ header.sticky .navbar li a {
   align-items: center;
 }
 
+.img_slide {
+  width: 70vw;
+  height: 90vh;
+}
+
 /* Banner ------------------------ */
 
 /* Home ------------------------------------------------------------------------- */
-
 
 .space {
   height: 100px;
@@ -115,59 +125,107 @@ header.sticky .navbar li a {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-top: 20%;
-  height: 80vh;
+  margin-top: 8%;
+  height: 120vh;
 }
 
 .cadastro_container {
-  position: absolute;
-  top: 70%;
-  left: 25%;
-  transform: translate(-50%, -50%);
-  width: 30%;
+  width: 35%;
   padding: 40px;
+  margin-left: 5%;
   box-sizing: border-box;
   border: 1px solid #000000;
   box-shadow: 0 5px 10px #00000081;
+  border: none;
   border-radius: 50px;
   display: flex;
-  justify-content: space-around;
   align-items: center;
   flex-direction: column;
 }
 
+.banner_cadastro {
+  height: 90vh;
+  width: 60%;
+  border-radius: 20px;
+  margin: 2%;
+  background-image: url("../../imgs/beatles_cadastro.png");
+  background-size: cover;
+}
+
 .cadastro_container h2 {
-  margin: 0 0 40px;
+  margin: 0 0 30px;
   padding: 0;
   text-transform: uppercase;
 }
 
 .cadastro_container input {
   padding: 10px 0;
-  margin-bottom: 20px;
-  width: 20vw;
+  margin-bottom: 15px;
+  font-size: 15px;
+  width: 25vw;
   box-sizing: border-box;
   box-shadow: none;
   outline: none;
   border: none;
-  border-bottom: 1px solid #000000;
+  border-bottom: 2px solid #000000;
+}
+
+.cadastro_container label {
+  font-size: 20px;
 }
 
 .cadastro_container button {
-  cursor: pointder;
+  height: 8vh;
+  width: 40%;
+  cursor: pointer;
   margin-top: 20px;
-  height: 5vh;
-  width: 50%;
+  border-radius: 10px;
+  border: none;
+  background-color: #00000093;
+  box-shadow: 0 5px 10px #000000;
+  color: #ffffff;
+  font-size: large;
 }
 
+.cadastro_container .select_container{
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+}
 
+select {
+  box-shadow: 0 5px 15px #000000;
+  font-size: 1rem;
+  padding: 1em 4em 1em 1.5em;
+  margin-top: 10px;
+  background: #00000093;
+  color: #ffffff;
+  border: 0;
+  border-radius: 10px;
+}
 
-/* Cadastro ------------------------------------------------------------------------- */
+.select_container {
+  position: relative;
+}
 
-/* footer */
+.custom_arrow {
+  position: absolute;
+  top: 2.1rem;
+  right: 0;
+  display: block;
+  background: #00000085;
+  border-radius: 0 10px 10px 0;
+  height: 60%;
+  width: 15%;
+  pointer-events: none;
+}
+
+/* cadastro ------------------------------------------------------------------------- */
+
+/* Footer */
 
 footer {
-  height: 20vh;
+  height: 25vh;
   color: #ffffff;
   background-color: #000000;
   font-size: 20px;
