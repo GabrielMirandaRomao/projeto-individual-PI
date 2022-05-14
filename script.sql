@@ -7,7 +7,9 @@ create table usuarios (
     nome_usuario varchar(60),
     idade_usuario char(2),
     email varchar(60),
-	senha varchar(50)
+	senha varchar(50),
+    fk_album int,
+    foreign key (fk_album) references albums(id_album)
 );
 
 create table albums (
@@ -16,10 +18,4 @@ create table albums (
     ano_album char(4)
 );
 
-create table album_favorito (
-	fk_usuario int,
-    foreign key (fk_usuario) references usuarios(id_usuario),
-    fk_album int,
-    foreign key (fk_album) references albums(id_album),
-    primary key (fk_album, fk_usuario)
-);
+-- no campo fk_album, pegar o valor da combo box, exemplo, value = 2.

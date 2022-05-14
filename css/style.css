@@ -1,58 +1,76 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-.space {
-  height: 100px;
-}
+/* Home */
 
+/* Header */
 header {
-  height: 15vh; 
-  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 20vh;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: 0.6s;
+  padding: 40px 100px;
+  z-index: 100000;
   background-color: #000000;
 }
 
-.navbar {
-  width: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  list-style: none;
-  color: #ffffff;
+header.sticky {
+  padding: 5px 100px;
+  background: #00000009;
+  height: 10vh;
 }
 
-.navbar_container {
-  width: 80%;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-}
-
-.navbar a {
-  text-decoration: none;
-  font-size: larger;
-  color: #ffffff;
-}
-
-.logo .img_navbar {
-  height: 15vh;
+span .img_navbar {
+  height: 10vh;
   border-radius: 50px;
 }
 
-.img_logo {
-  height: 25vh;
+header span .img_navbar {
+  position: relative;
+  transition: 0.6s;
 }
 
-.agora {
-  font-weight: 800;
+header .navbar {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 35%;
+}
+
+header .navbar li {
+  position: relative;
+  list-style: none;
+}
+
+header .navbar li a {
+  position: relative;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: large;
+  font-size: larger;
+  transition: 0.6s;
+}
+
+header.sticky .navbar li a {
+  color: #000000;
+  font-weight: bolder;
   font-size: larger;
 }
 
 .icon_submarine {
   width: 20px;
 }
+
+/* Header ------------------------ */
 
 /* Banner */
 
@@ -64,8 +82,13 @@ header {
 .banner_container {
   height: 90vh;
   width: 60%;
+  margin-top: 10%;
   background-image: url("../../imgs/beatles_banner.jpg");
   background-size: cover;
+}
+
+.img_logo {
+  height: 25vh;
 }
 
 .banner_logo {
@@ -77,40 +100,80 @@ header {
   align-items: center;
 }
 
-/* body section */
+/* Banner ------------------------ */
 
-.banner_text {
+/* Home ------------------------------------------------------------------------- */
+
+
+.space {
+  height: 100px;
+}
+
+/* Cadastro */
+
+.cadastro {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 20%;
+  height: 80vh;
 }
 
-.text_container {
-  width: 40vw;
+.cadastro_container {
+  position: absolute;
+  top: 70%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  padding: 40px;
+  box-sizing: border-box;
+  border: 1px solid #000000;
+  box-shadow: 0 5px 10px #00000081;
+  border-radius: 50px;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: space-around;
-  /* background-color: rgb(0, 0, 0, 0.7);
-  border-radius: 300px; */
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
 }
 
-.banner_text .img_container {
-  display: flex;
-  align-items: flex-end;
+.cadastro_container h2 {
+  margin: 0 0 40px;
+  padding: 0;
+  text-transform: uppercase;
 }
 
-.img_text_banner {
-  margin-top: 10%;
-  height: 60vh;
-  border-radius: 25px;
+.cadastro_container input {
+  padding: 10px 0;
+  margin-bottom: 20px;
+  width: 20vw;
+  box-sizing: border-box;
+  box-shadow: none;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #000000;
 }
 
+.cadastro_container button {
+  cursor: pointder;
+  margin-top: 20px;
+  height: 5vh;
+  width: 50%;
+}
+
+
+
+/* Cadastro ------------------------------------------------------------------------- */
 
 /* footer */
 
 footer {
-  height: 30vh;
+  height: 20vh;
+  color: #ffffff;
+  background-color: #000000;
+  font-size: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+/* ------------------------ */
