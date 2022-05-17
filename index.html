@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
-    <script src="js/header.js"></script>
+    <script src="js/animacao.js"></script>
     <script href="script.js"></script>
     <title>Home</title>
   </head>
@@ -44,8 +44,9 @@
 
     <div class="space"></div>
 
-    <section class="slider">
-      <div class="slides">
+    <section class="banner_slide">
+      <div class="slider">
+        <div class="slides">
         <input type="radio" name="radio_btn" id="radio1" />
         <input type="radio" name="radio_btn" id="radio2" />
         <input type="radio" name="radio_btn" id="radio3" />
@@ -63,6 +64,20 @@
         <div class="slide">
           <img class="img_slide" src="imgs/beatles_fourth.jpg" alt="" />
         </div>
+      </div>
+
+      <div class="navigation_auto">
+        <div class="auto_btn1"></div>
+        <div class="auto_btn2"></div>
+        <div class="auto_btn3"></div>
+        <div class="auto_btn4"></div>
+      </div>
+
+      <div class="navigation_manual">
+        <label for="radio1" class="manual_btn" id="manual_btn1"></label>
+        <label for="radio2" class="manual_btn" id="manual_btn2"></label>
+        <label for="radio3" class="manual_btn" id="manual_btn3"></label>
+        <label for="radio4" class="manual_btn" id="manual_btn4"></label>
       </div>
     </section>
 
