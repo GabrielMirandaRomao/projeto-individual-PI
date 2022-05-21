@@ -72,6 +72,34 @@ header.sticky .navbar li a {
   font-size: larger;
 }
 
+header.sticky .navbar li .primeiro_link {
+  color: #fc3ab3;
+  border-bottom: 2px solid #000000;
+  font-weight: bolder;
+  font-size: 25px;
+}
+
+header.sticky .navbar li .segundo_link {
+  color: #e6cb06;
+  border-bottom: 2px solid #000000;
+  font-weight: bolder;
+  font-size: 25px;
+}
+
+header.sticky .navbar li .terceiro_link {
+  color: #008fb7;
+  border-bottom: 2px solid #000000;
+  font-weight: bolder;
+  font-size: 25px;
+}
+
+header.sticky .navbar li .quarto_link {
+  color: #fc4750;
+  border-bottom: 2px solid #000000;
+  font-weight: bolder;
+  font-size: 25px;
+}
+
 .icon_submarine {
   width: 20px;
 }
@@ -89,7 +117,7 @@ header.sticky .navbar li a {
   height: 90vh;
   width: 60%;
   margin-top: 10%;
-  background-image: url("../../imgs/beatles_banner.jpg");
+  background-image: url("../assets/imgs/beatles_banner.jpg");
   background-size: cover;
 }
 
@@ -158,16 +186,16 @@ header.sticky .navbar li a {
   transition: 1s;
 }
 
-.manual_btn:not(:last-child){
+.manual_btn:not(:last-child) {
   margin-right: 40px;
 }
 
 #manual_btn1:hover {
-  background-color: #FC3AB3;
+  background-color: #fc3ab3;
 }
 
 #manual_btn2:hover {
-  background-color: #E6CB06;
+  background-color: #e6cb06;
 }
 
 #manual_btn3:hover {
@@ -175,7 +203,7 @@ header.sticky .navbar li a {
 }
 
 #manual_btn4:hover {
-  background-color: #FC4750;
+  background-color: #fc4750;
 }
 
 #radio1:checked ~ .first {
@@ -233,6 +261,24 @@ header.sticky .navbar li a {
 
 /* Banner ------------------------ */
 
+/* Banner texto */
+
+.banner_texto {
+  display: flex;
+  justify-content: center;
+}
+
+.texto_container {
+  display: flex;
+  width: 50%;
+  height: 500px;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* Banner texto ------------------------ */
+
 /* Home ------------------------------------------------------------------------- */
 
 /* .space {
@@ -268,17 +314,21 @@ header.sticky .navbar li a {
   width: 60%;
   border-radius: 20px;
   margin: 2%;
-  background-image: url("../../imgs/beatles_cadastro.png");
+  background-image: url("../assets/imgs/beatles_cadastro.png");
   background-size: cover;
 }
 
-.cadastro_container h2 {
+/* h2 login e cadastro */
+.cadastro_container h2,
+.login_container h2 {
   margin: 0 0 30px;
   padding: 0;
   text-transform: uppercase;
 }
 
-.cadastro_container input {
+/* input login e cadastro */
+.cadastro_container input,
+.login_container input {
   padding: 10px 0;
   margin-bottom: 15px;
   font-size: 15px;
@@ -290,11 +340,15 @@ header.sticky .navbar li a {
   border-bottom: 2px solid #000000;
 }
 
-.cadastro_container label {
+/* label login e cadastro */
+.cadastro_container label,
+.login_container label {
   font-size: 20px;
 }
 
-.cadastro_container button {
+/* button login e cadastro */
+.cadastro_container button,
+.login_container button {
   height: 8vh;
   width: 40%;
   cursor: pointer;
@@ -307,7 +361,7 @@ header.sticky .navbar li a {
   font-size: large;
 }
 
-.cadastro_container .select_container{
+.cadastro_container .select_container {
   font-size: 20px;
   display: flex;
   flex-direction: column;
@@ -354,6 +408,7 @@ select {
 
 .login_container {
   width: 30%;
+  height: 50%;
   padding: 40px;
   margin-left: 5%;
   box-sizing: border-box;
@@ -364,6 +419,7 @@ select {
   display: flex;
   align-items: center;
   flex-direction: column;
+  justify-content: space-evenly;
 }
 
 /* login ------------------------------------------------------------------------- */

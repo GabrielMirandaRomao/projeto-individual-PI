@@ -6,22 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
     <script src="js/animacao.js"></script>
-    <script href="script.js"></script>
+    <!-- <script src="script.js"></script> -->
     <title>Home</title>
   </head>
   <body>
     <header>
       <span>
-        <img class="img_navbar" src="imgs/walk.gif" alt="gif" />
+        <img class="img_navbar" src="assets/imgs/walk.gif" alt="gif" />
       </span>
       <ul class="navbar">
         <li>
           <img
             class="icon_submarine"
-            src="imgs/yellow_submarine.png"
+            src="assets/imgs/yellow_submarine.png"
             alt="yellow_submarine"
           />
-          <a href="index.html">Inicial</a>
+          <a class="primeiro_link" href="index.html">Inicial</a>
         </li>
         <li>
           <a href="albums.html">albums</a>
@@ -37,7 +37,7 @@
 
     <section class="banner">
       <div class="banner_logo">
-        <img class="img_logo" src="imgs/logo.png" alt="logo_beatles" />
+        <img class="img_logo" src="assets/imgs/logo.png" alt="logo_beatles" />
       </div>
       <div class="banner_container"></div>
     </section>
@@ -53,16 +53,16 @@
         <input type="radio" name="radio_btn" id="radio4" />
 
         <div class="slide first">
-          <img class="img_slide" src="imgs/beatles_first.jpg" alt="" />
+          <img class="img_slide" src="assets/imgs/beatles_first.jpg" alt="" />
         </div>
         <div class="slide">
-          <img class="img_slide" src="imgs/beatles_second.jpeg" alt="" />
+          <img class="img_slide" src="assets/imgs/beatles_second.jpeg" alt="" />
         </div>
         <div class="slide">
-          <img class="img_slide" src="imgs/beatles_third.jpg" alt="" />
+          <img class="img_slide" src="assets/imgs/beatles_third.jpg" alt="" />
         </div>
         <div class="slide">
-          <img class="img_slide" src="imgs/beatles_fourth.jpg" alt="" />
+          <img class="img_slide" src="assets/imgs/beatles_fourth.jpg" alt="" />
         </div>
       </div>
 
@@ -81,14 +81,17 @@
       </div>
     </section>
 
-    <footer>
-      <div class="container">footer</div>
-    </footer>
-  </body>
-</html>
+    <section class="banner_texto">
 
-<!-- <div class="text_container">
+      <div class="texto_container">
         <h1>Historia</h1>
+
+        <p>
+          Colocar coisas sobre mim.
+          Talvez o por que da escolha do tema.
+          Falar o quão importante essa banda é pra mim.
+        </p>
+
         <p>
           The principal members of the Beatles were John Lennon, Paul McCartney,
           George Harrison, and Ringo Starr. Other early members included Stuart
@@ -122,4 +125,14 @@
           The Beatles formally disbanded in the spring of 1970. All four members
           went on to produce more music individually or with other groups.
         </p>
-      </div> -->
+      </div>
+
+    </section>
+
+    <footer>
+      <div class="container">footer</div>
+    </footer>
+  </body>
+</html>
+
+

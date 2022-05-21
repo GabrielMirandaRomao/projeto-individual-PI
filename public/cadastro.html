@@ -11,7 +11,7 @@
   </head>
   <body>
     <header>
-      <span><img class="img_navbar" src="imgs/walk.gif" alt="gif" /></span>
+      <span><img class="img_navbar" src="assets/imgs/walk.gif" alt="gif" /></span>
       <ul class="navbar">
         <li>
           <a href="index.html">Inicial</a>
@@ -25,10 +25,10 @@
         <li>
           <img
             class="icon_submarine"
-            src="imgs/yellow_submarine.png"
+            src="assets/imgs/yellow_submarine.png"
             alt="yellow_submarine"
           />
-          <a href="cadastro.html">Cadastro</a>
+          <a class="quarto_link" href="cadastro.html">Cadastro</a>
         </li>
       </ul>
     </header>
@@ -39,23 +39,23 @@
         <form action="">
           <div>
             <label for="">Nome</label><br />
-            <input type="text" />
+            <input id="input_nome" type="text" />
           </div>
           <div>
             <label for="">Idade</label><br />
-            <input type="number" min="1" />
+            <input id="input_idade" type="number" min="1" />
           </div>
           <div>
             <label for="">Email</label><br />
-            <input type="email" />
+            <input id="input_email" type="email" />
           </div>
           <div>
             <label for="">Senha</label><br />
-            <input type="text" />
+            <input id="input_senha" type="text" />
           </div>
           <div>
             <label for="">Confirmar senha</label><br />
-            <input type="text" />
+            <input id="input_confirmacao_senha" type="text" />
           </div>
           <div class="select_container">
             <span> Album favorito</span>
@@ -77,9 +77,11 @@
             <span class="custom_arrow"></span>
           </div>
         </form>
-        <button>submit</button>
+        <button onclick="cadastrar()">submit</button>
       </div>
-      <div class="banner_cadastro"></div>
+      <div class="banner_cadastro">
+        <div id="mensagem_erro"></div>
+      </div>
     </section>
 
     <footer>
@@ -87,3 +89,23 @@
     </footer>
   </body>
 </html>
+
+<script>
+
+  function cadastrar(){
+
+    var nomeVar = input_nome.value;
+    var emailVar = input_email.value;
+    var senhaVar = input_senha.value;
+    var confirmacaoSenhaVar = input_confirmacao_senha.value;
+    var albumVar = album_favorito.value;
+
+    console.log(albumVar)
+
+    if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+      mensagem_erro.innerHTML = "Preencha todos os campos para prosseguir!";
+    }
+  
+  }
+
+</script>
