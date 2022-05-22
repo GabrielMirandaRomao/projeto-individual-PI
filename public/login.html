@@ -5,13 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
-    <script href="script.js"></script>
+    <script src="script.js"></script>
     <script src="js/animacao.js"></script>
     <title>Login</title>
   </head>
   <body>
     <header>
-      <span><img class="img_navbar" src="assets/imgs/walk.gif" alt="gif" /></span>
+      <span
+        ><img class="img_navbar" src="assets/imgs/abbey_road.gif" alt="gif"
+      /></span>
       <ul class="navbar">
         <li>
           <a href="index.html">Inicial</a>
@@ -34,21 +36,31 @@
     </header>
 
     <section class="login">
-      <div class="login_container">
-        <h2>login</h2>
-        <form action="">
-          <div>
-            <label for="">Email</label><br />
-            <input type="email" />
-          </div>
-          <div>
-            <label for="">Senha</label><br />
-            <input type="text" />
-          </div>
-        </form>
-        <button>submit</button>
+      <div class="card_login">
+        <div class="login_container">
+          <h2>login</h2>
+          <form action="">
+            <div>
+              <label for="">Email</label><br />
+              <input id="input_email" type="email" />
+            </div>
+            <div>
+              <label for="">Senha</label><br />
+              <input id="input_senha" type="password" />
+            </div>
+          </form>
+          <button onclick="entrar()">submit</button>
+
+          <!-- Implementar depois 
+          <div id="div_aguardar" class="loading-div">
+            <img src="./assets/circle-loading.gif" id="loading-gif" />
+          </div> -->
+
+        </div>
+        <div class="banner_login">
+          <div class="mensagem_erro" id="mensagem_erro"></div>
+        </div>
       </div>
-      <div class="banner_login"></div>
     </section>
 
     <footer>
@@ -56,3 +68,102 @@
     </footer>
   </body>
 </html>
+
+<script>
+
+  function entrar(){
+
+    var emailVar = input_email.value;
+    var senhaVar = input_senha.value;
+
+    if (emailVar == '' || senhaVar == ''){
+      mensagem_erro.innerHTML = `
+      <span class="span_erro"> 
+        Preencha todos os campos para prosseguir!
+      </span>`;
+      
+      finalizarAguardar();
+      return false;
+
+    } else {
+      setInterval(sumirMensagem, 5000);
+    }
+    
+    if (emailVar.indexOf('@') == -1){
+      mensagem_erro.innerHTML =`
+      <span class="span_erro"> 
+        Ops, e-mail inválido! Falta o "@"
+      </span>`;
+
+      finalizarAguardar();
+      return false;
+
+    } else {
+      setInterval(sumirMensagem, 5000);
+    }
+
+    if (emailVar.indexOf('.com') == -1 && emailVar.indexOf('.br') == -1){
+      mensagem_erro.innerHTML = `
+      <span class="span_erro"> 
+        Seu email está sem o ".com" ou ".com.br"
+      </span>`;
+
+     finalizarAguardar();
+      return false;
+
+    } else {
+      setInterval(sumirMensagem, 5000);
+    }
+
+    console.log("FORM LOGIN: ", emailVar);
+    console.log("FORM SENHA: ", senhaVar);
+
+    fetch("/usuarios/autenticar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        emailServer: emailVar,
+        senhaServer: senhaVar,
+      }),
+    })
+      .then(function (resposta) {
+        console.log("ESTOU NO THEN DO entrar()!");
+
+        if (resposta.ok) {
+          console.log(resposta);
+
+          resposta.json().then((json) => {
+            console.log(json);
+            console.log(JSON.stringify(json));
+
+            sessionStorage.EMAIL_USUARIO = json.email;
+            sessionStorage.NOME_USUARIO = json.nome;
+            sessionStorage.ID_USUARIO = json.id;
+
+            setTimeout(function () {
+              window.location = "./dashboard/cards.html";
+            }, 1000); // apenas para exibir o loading
+          });
+        } else {
+          console.log("Houve um erro ao tentar realizar o login!");
+
+          resposta.text().then((texto) => {
+            console.error(texto);
+            finalizarAguardar(texto);
+          });
+        }
+      })
+      .catch(function (erro) {
+        console.log(erro);
+      });
+
+    return false;
+  }
+
+  function sumirMensagem() {
+    cardErro.style.display = "none";
+  }
+
+</script>

@@ -11,7 +11,7 @@
   </head>
   <body>
     <header>
-      <span><img class="img_navbar" src="assets/imgs/walk.gif" alt="gif" /></span>
+      <span><img class="img_navbar" src="assets/imgs/abbey_road.gif" alt="gif" /></span>
       <ul class="navbar">
         <li>
           <a href="index.html">Inicial</a>
@@ -34,7 +34,7 @@
     </header>
 
     <section class="cadastro">
-      <div class="cadastro_container">
+      <div class="cadastro_container" id="cadastro_container">
         <h2>sign up</h2>
         <form action="">
           <div>
@@ -43,7 +43,7 @@
           </div>
           <div>
             <label for="">Idade</label><br />
-            <input id="input_idade" type="number" min="1" />
+            <input id="input_idade" type="number" min="8" />
           </div>
           <div>
             <label for="">Email</label><br />
@@ -51,11 +51,11 @@
           </div>
           <div>
             <label for="">Senha</label><br />
-            <input id="input_senha" type="text" />
+            <input id="input_senha" type="password" />
           </div>
           <div>
             <label for="">Confirmar senha</label><br />
-            <input id="input_confirmacao_senha" type="text" />
+            <input id="input_confirmacao_senha" type="password" />
           </div>
           <div class="select_container">
             <span> Album favorito</span>
@@ -78,9 +78,21 @@
           </div>
         </form>
         <button onclick="cadastrar()">submit</button>
+         
+        <!-- Implementar depois 
+          <div id="div_aguardar" class="loading-div">
+            <img src="./assets/circle-loading.gif" id="loading-gif" />
+          </div> -->
+          
       </div>
+
       <div class="banner_cadastro">
-        <div id="mensagem_erro"></div>
+        <div class="mensagem_erro" id="mensagem_erro">
+          <div class="alerta_erro">
+            <div class="card_erro" id="cardErro">
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -89,12 +101,13 @@
     </footer>
   </body>
 </html>
-
+<span class="span_erro"></span>
 <script>
 
   function cadastrar(){
 
     var nomeVar = input_nome.value;
+    var idadeVar = input_idade.value;
     var emailVar = input_email.value;
     var senhaVar = input_senha.value;
     var confirmacaoSenhaVar = input_confirmacao_senha.value;
@@ -102,10 +115,120 @@
 
     console.log(albumVar)
 
-    if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
-      mensagem_erro.innerHTML = "Preencha todos os campos para prosseguir!";
+    if (
+      nomeVar == "" ||
+      idadeVar == "" ||
+      emailVar == "" || 
+      senhaVar == "" || 
+      confirmacaoSenhaVar == ""
+    ) {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML = `
+      <span class="span_erro"> 
+        Preencha todos os campos para prosseguir!
+      </span>`;
+
+      console.log('TESTE')
+
+      finalizarAguardar();
+      return false;
+
+    } else {
+      setInterval(sumirMensagem, 5000);
+    }
+    
+    if (emailVar.startsWith('admin')){
+      mensagem_erro.innerHTML = `
+      <span class="span_erro"> 
+        Seu Email não pode começar com 'admin'
+      </span>`;
+
+      finalizarAguardar();
+      return false;
+
+    } else {
+      setInterval(sumirMensagem, 5000);
+    }
+    
+    if (emailVar.indexOf('@') == -1){
+      mensagem_erro.innerHTML = `
+      <span class="span_erro"> 
+        Seu email está sem o "@"!
+      </span>`;
+
+      finalizarAguardar();
+      return false;
+
+    } else {
+      setInterval(sumirMensagem, 5000);
+    }
+    
+    if (emailVar.indexOf('.com') == -1 && emailVar.indexOf('.br') == -1){
+      mensagem_erro.innerHTML = `
+      <span class="span_erro"> 
+        Seu email está sem o ".com" ou ".com.br"
+      </span>`;
+
+     finalizarAguardar();
+      return false;
+
+    } else {
+      setInterval(sumirMensagem, 5000);
+    }
+
+     if (senhaVar != confirmacaoSenhaVar){
+      mensagem_erro.innerHTML = `
+      <span class="span_erro"> 
+        A senha está diferente! 
+      </span>`;
+
+      finalizarAguardar();
+      return false;
+      
+    } else {
+      setInterval(sumirMensagem, 5000);
+    }
+      
+     // Enviando o valor da nova input
+     fetch("/usuarios/cadastrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        nomeServer: nomeVar,
+        idadeServer: idadeVar,
+        emailServer: emailVar,
+        senhaServer: senhaVar,
+        albumServer: albumVar,
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+          cardErro.style.display = "block";
+          mensagem_erro.innerHTML = "Cadastro realizado com sucesso!";
+          window.location = "login.html";
+          limparFormulario();
+          finalizarAguardar();
+        } else {
+          throw "Houve um erro ao tentar realizar o cadastro!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+        finalizarAguardar();
+      });
+
+    return false;
+
     }
   
+  function sumirMensagem() {
+    cardErro.style.display = "none";
   }
 
 </script>

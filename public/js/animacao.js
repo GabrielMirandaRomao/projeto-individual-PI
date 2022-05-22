@@ -3,11 +3,11 @@ window.addEventListener("scroll", function(){
     header.classList.toggle("sticky", window.scrollY > 0)
 })
 
-// var counter = 1;
-// setInterval(function(){
-//     document.getElementById('radio' + counter).checked = true;
-//     counter++;
-//     if(counter > 4){
-//         counter = 1
-//     }
-// }, 8000);
+var counter = 1;
+setInterval(function(){
+    document.getElementById('radio' + counter).checked = true;
+    counter++;
+    if(counter > 4){
+        counter = 1
+    }
+}, 8000);
