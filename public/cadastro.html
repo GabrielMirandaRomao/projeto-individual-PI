@@ -105,13 +105,13 @@
 <script>
 
   function cadastrar(){
-
-    var nomeVar = input_nome.value;
-    var idadeVar = input_idade.value;
-    var emailVar = input_email.value;
-    var senhaVar = input_senha.value;
-    var confirmacaoSenhaVar = input_confirmacao_senha.value;
-    var albumVar = album_favorito.value;
+    
+    var nomeVar = (input_nome.value).toLowerCase();
+    var idadeVar = (input_idade.value).toLowerCase();
+    var emailVar = (input_email.value).toLowerCase();
+    var senhaVar = (input_senha.value).toLowerCase();
+    var confirmacaoSenhaVar = (input_confirmacao_senha.value).toLowerCase();
+    var albumVar = Number(album_favorito.value);
 
     console.log(albumVar)
 

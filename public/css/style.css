@@ -493,7 +493,7 @@ select {
 
 /* Albums */
   .banner_galeria {
-    width: 150vw;
+    width: 90vw;
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
@@ -519,14 +519,13 @@ select {
   }
 
   .album_img {
-    /* opacity: 1; */
     height: 70vh;
     width: 33vw;
     transition: .5s ease;
     backface-visibility: hidden;
   }
   
-  .teste {
+  .button_search {
     transition: .5s ease;
     opacity: 0;
     position: absolute;
@@ -538,18 +537,22 @@ select {
   }
   
   .album:hover .album_img {
-    opacity: 0.3;
+    opacity: 0.5;
   }
   
-  .album:hover .teste {
+  .album:hover .button_search {
     opacity: 1;
   }
 
-  .texto_teste {
-    background-color: #2a2b2b;
+  .search {
+    /* background-color: #2a2b2b; */
     color: white;
     font-size: 16px;
-    padding: 16px 32px;
+    /* padding: 16px 32px; */
+    height: 80px;
+    width: 80px;
+    background-image: url("../assets/imgs/search.png");
+    background-size: cover;
   }
 
 /* albums ------------------------------------------------------------------------- */
