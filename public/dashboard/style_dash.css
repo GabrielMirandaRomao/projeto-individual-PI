@@ -38,8 +38,8 @@ body {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  border-right: 3px solid #b9b9b9;
-  background-color: #212121;
+  border-right: 3px solid #a3a2a2;
+  background-color: #212124;
 }
 
 .header-left h1 {
@@ -99,7 +99,8 @@ body {
   position: relative;
   top: 0;
   left: 25%;
-  background-color: #161618;
+  /* background-color: #424242; */
+  background-image: linear-gradient(#2A12B4, #ffffff, #B50C09);
   height: 705vh;
   display: flex;
   flex-direction: column;
@@ -116,22 +117,27 @@ body {
 }
 
 .perigo-frio {
+  border: 2px solid #000000;
   background-color: #5c6bc0;
 }
 
 .perigo-quente {
+  border: 2px solid #000000;
   background-color: #ff7043;
 }
 
 .alerta-frio {
+  border: 2px solid #000000;
   background-color: #42a5f5;
 }
 
 .alerta-quente {
+  border: 2px solid #000000;
   background-color: #ffee58;
 }
 
 .ideal {
+  border: 2px solid #000000;  
   background-color: #9ccc65;
 }
 
@@ -164,6 +170,7 @@ body {
   justify-content: flex-start;
   align-items: center;
   background-color: #212124;
+  box-shadow: 0 10px 10px 0 #000000;
   font-size: 20px;
   border-radius: 20px;
 }

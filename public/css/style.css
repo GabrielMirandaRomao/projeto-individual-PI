@@ -2,8 +2,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Metal Mania', cursive;
+  font-family:  'Roboto', sans-serif;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 ::-webkit-scrollbar {
 
@@ -93,30 +95,35 @@ header.sticky .navbar li a {
 
 header.sticky .navbar li .primeiro_link {
   color: #fc3ab3;
-  border-bottom: 2px solid #000000;
+  /* border-bottom: 2px solid #000000; */
   font-weight: bolder;
   font-size: 25px;
 }
 
 header.sticky .navbar li .segundo_link {
   color: #e6cb06;
-  border-bottom: 2px solid #000000;
+  /* border-bottom: 2px solid #000000; */
   font-weight: bolder;
   font-size: 25px;
 }
 
 header.sticky .navbar li .terceiro_link {
   color: #008fb7;
-  border-bottom: 2px solid #000000;
+  /* border-bottom: 2px solid #000000; */
   font-weight: bolder;
   font-size: 25px;
 }
 
 header.sticky .navbar li .quarto_link {
   color: #fc4750;
-  border-bottom: 2px solid #000000;
+  /* border-bottom: 2px solid #000000; */
   font-weight: bolder;
   font-size: 25px;
+}
+
+header.sticky .navbar {
+  background-color: #eee8e8;
+  border-radius: 10px;
 }
 
 .icon_submarine {
@@ -493,7 +500,7 @@ select {
 
 /* Albums */
   .banner_galeria {
-    width: 90vw;
+    /* width: 10vw; */
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
@@ -511,7 +518,7 @@ select {
   {
     display: flex;
     flex-direction: row;
-    width: 100%;
+    /* width: 100%; */
   }
 
   .album {
@@ -538,6 +545,7 @@ select {
   
   .album:hover .album_img {
     opacity: 0.5;
+    background-color: #000000;
   }
   
   .album:hover .button_search {
@@ -588,6 +596,34 @@ footer {
   justify-content: center;
   align-items: center;
   border: 2px solid #000000;
+  animation: validacao 1s;
+  transition:linear                                                                                                                        2s;
+}
+
+@keyframes validacao {
+  0% {
+    margin: 0;
+  }
+
+  20% {
+    margin: 3px;
+  }
+
+  40% {
+    margin: 6px;
+  }
+
+  60% {
+    margin: 4px;
+  }
+
+  80% {
+    margin: 3px;
+  }
+
+  100% {
+    margin: 0px;
+  }
 }
 
 /* error ------------------------------- */
