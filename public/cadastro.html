@@ -136,14 +136,15 @@
         Preencha todos os campos para prosseguir!
       </span>`;
 
-      console.log('TESTE')
+      // console.log('TESTE')
 
-      finalizarAguardar();
-      return false;
+      // finalizarAguardar();
+      // return false;
 
-    } else {
-      setInterval(sumirMensagem, 5000);
     }
+    // else {
+    //   setInterval(sumirMensagem, 5000);
+    // }
     
     if (emailVar.startsWith('admin')){
       mensagem_erro.innerHTML = `
@@ -151,12 +152,13 @@
         Seu Email não pode começar com 'admin'
       </span>`;
 
-      finalizarAguardar();
-      return false;
+      // finalizarAguardar();
+      // return false;
 
-    } else {
-      setInterval(sumirMensagem, 5000);
     }
+    // else {
+    //   setInterval(sumirMensagem, 5000);
+    // }
     
     if (emailVar.indexOf('@') == -1){
       mensagem_erro.innerHTML = `
@@ -164,12 +166,13 @@
         Seu email está sem o "@"!
       </span>`;
 
-      finalizarAguardar();
-      return false;
+      // finalizarAguardar();
+      // return false;
 
-    } else {
-      setInterval(sumirMensagem, 5000);
-    }
+    } 
+    // else {
+    //   setInterval(sumirMensagem, 5000);
+    // }
     
     if (emailVar.indexOf('.com') == -1 && emailVar.indexOf('.br') == -1){
       mensagem_erro.innerHTML = `
@@ -177,12 +180,13 @@
         Seu email está sem o ".com" ou ".com.br"
       </span>`;
 
-     finalizarAguardar();
-      return false;
+    //  finalizarAguardar();
+    //   return false;
 
-    } else {
-      setInterval(sumirMensagem, 5000);
-    }
+    } 
+    // else {
+    //   setInterval(sumirMensagem, 5000);
+    // }
 
      if (senhaVar != confirmacaoSenhaVar){
       mensagem_erro.innerHTML = `
@@ -190,12 +194,14 @@
         A senha está diferente! 
       </span>`;
 
-      finalizarAguardar();
-      return false;
+      // finalizarAguardar();
+      // return false;
       
-    } else {
-      setInterval(sumirMensagem, 5000);
-    }
+    } 
+    // else {
+    //  setInterval(sumirMensagem, 5000);
+    // }
+
       
      // Enviando o valor da nova input
      fetch("/usuarios/cadastrar", {
