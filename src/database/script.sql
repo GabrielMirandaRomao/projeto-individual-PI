@@ -21,7 +21,7 @@ create table albums (
 -- no campo fk_album, pegar o valor da combo box, exemplo, value = 2.
 
 insert into albums 
-	values 
+values
     (null, 'please please me', '1963'),
     (null, 'with the beatles', '1963'),
     (null, 'a hard days night', '1964'),
@@ -35,3 +35,16 @@ insert into albums
     (null, 'yellow submarine', '1969'),
     (null, 'abbey road', '1969'),
 	(null, 'let it be', '1969');
+
+insert into usuarios 
+values 
+    (null, 'felipe', 20 , 'teste1@gmail.com', '12345678',  1),
+	(null, 'fernando', 19 , 'teste2mail.com', '12345678', 2),
+    (null, 'victor', 22 , 'teste3@gmail.com', '12345678', 2),
+    (null, 'guilherme', 23 , 'teste4@gmail.com', '12345678', 2),
+	(null, 'henrique', 25 , 'teste5@gmail.com', '12345678', 2),
+    (null, 'charles', 20 , 'teste6@gmail.com', '12345678',  2),
+	(null, 'Fernanda', 24 , 'teste7@gmail.com', '12345678', 5),
+    (null, 'Vinicius', 22 , 'teste8@gmail.com', '12345678', 5),
+    (null, 'Gabriel', 22 , 'teste9@gmail.com', '12345678', 7),
+	(null, 'lucas', 25 , 'teste10@gmail.com', '12345678', 7);

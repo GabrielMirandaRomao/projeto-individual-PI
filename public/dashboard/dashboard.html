@@ -109,7 +109,7 @@
   }
 
   // só altere aqui se souber o que está fazendo!
-  function plotarGrafico(resposta, idAquario) {
+  function plotarGrafico(resposta, id_usuario) {
     console.log("iniciando plotagem do gráfico...");
 
     var dados = {
@@ -159,7 +159,7 @@
         scales: {
           yAxes: [
             {
-              type: "linear",
+              type: "bar",
               display: true,
               position: "left",
               id: "y-temperatura",
@@ -170,7 +170,7 @@
               },
             },
             {
-              type: "linear",
+              type: "bar",
               display: false,
               position: "right",
               id: "y-umidade",
@@ -200,13 +200,13 @@
     }, 2000);
 
     //Atualiza os dados de 5 em 5 segundos
-    setTimeout(() => atualizarGrafico(idAquario, dados), 2000);
+    setTimeout(() => atualizarGrafico(id_usuario, dados), 2000);
   }
 
   // só mexer se quiser alterar o tempo de atualização
   // ou se souber o que está fazendo!
-  function atualizarGrafico(idAquario, dados) {
-    fetch(`/medidas/tempo-real/${idAquario}`, { cache: "no-store" })
+  function atualizarGrafico(id_usuario, dados) {
+    fetch(`/medidas/tempo-real/${id_usuario}`, { cache: "no-store" })
       .then(function (response) {
         if (response.ok) {
           response.json().then(function (novoRegistro) {
@@ -217,21 +217,21 @@
             dados.labels.shift(); // apagar o primeiro
             dados.labels.push(novoRegistro[0].momento_grafico); // incluir um novo momento
             dados.datasets[0].data.shift(); // apagar o primeiro de umidade
-            dados.datasets[0].data.push(novoRegistro[0].umidade); // incluir uma nova medida de umidade
+            dados.datasets[0].data.push(novoRegistro[0].nome_album); // incluir uma nova medida de umidade
             dados.datasets[1].data.shift(); // apagar o primeiro de umidade
-            dados.datasets[1].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de umidade
+            dados.datasets[1].data.push(novoRegistro[0].idade_usuario); // incluir uma nova medida de umidade
 
             window.grafico_linha.update();
 
             proximaAtualizacao = setTimeout(
-              () => atualizarGrafico(idAquario, dados),
+              () => atualizarGrafico(id_usuario, dados),
               2000
             );
           });
         } else {
           console.error("Nenhum dado encontrado ou erro na API");
           proximaAtualizacao = setTimeout(
-            () => atualizarGrafico(idAquario, dados),
+            () => atualizarGrafico(id_usuario, dados),
             2000
           );
         }

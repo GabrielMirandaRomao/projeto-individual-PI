@@ -276,9 +276,10 @@
 
               var dados = {
                 temperatura: resposta[0].temperatura,
+                nome_album: resposta[0].nome_album,
               };
 
-              alertar(resposta[0].temperatura, idAquario);
+              alertar(resposta[0].temperatura, idAquario, resposta[0].nome_album);
             });
           } else {
             console.error("Nenhum dado encontrado ou erro na API");
@@ -292,6 +293,20 @@
     }
 
     function alertar(temperatura, idAquario) {
+      if (idAquario == 1) {
+        temp_aquario_1.innerHTML = temperatura + "°C";
+        card = card_1;
+      } 
+      else if (idAquario == 2) {
+        temp_aquario_2.innerHTML = temperatura + "°C";
+        card = card_2;
+      } else if (idAquario == 3) {
+        temp_aquario_3.innerHTML = temperatura + "°C";
+        card = card_3;
+      } else if (idAquario == 4) {
+        temp_aquario_4.innerHTML = temperatura + "°C";
+        card = card_4;
+      }
       var limites = {
         muito_quente: 23,
         quente: 22,
@@ -326,20 +341,6 @@
       }
 
       var card;
-
-      if (idAquario == 1) {
-        temp_aquario_1.innerHTML = temperatura + "°C";
-        card = card_1;
-      } else if (idAquario == 2) {
-        temp_aquario_2.innerHTML = temperatura + "°C";
-        card = card_2;
-      } else if (idAquario == 3) {
-        temp_aquario_3.innerHTML = temperatura + "°C";
-        card = card_3;
-      } else if (idAquario == 4) {
-        temp_aquario_4.innerHTML = temperatura + "°C";
-        card = card_4;
-      }
 
       // alterando
       card.className = classe_temperatura;
