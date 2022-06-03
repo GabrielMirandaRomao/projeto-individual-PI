@@ -98,7 +98,7 @@ body {
 
 .dash {
   width: 80%;
-  height: 700vh;
+  height: 710vh;
   position: relative;
   top: 0;
   left: 20%;
@@ -158,7 +158,7 @@ body {
 .regua {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: center;
   position: relative;
   width: 100%;
   height: 15vh;
@@ -168,12 +168,15 @@ body {
 
 .perigo-frio {
   border: 2px solid #000000;
-  background-color: #5c6bc0;
+  /* background-color: #5c6bc0; */
+  background-color: #ff7043;
 }
 
 .perigo-quente {
   border: 2px solid #000000;
-  background-color: #ff7043;
+  /* background-color: #ff7043; */
+  background-color: #9ccc65;
+  
 }
 
 .alerta-frio {
@@ -187,8 +190,10 @@ body {
 }
 
 .ideal {
-  border: 2px solid #000000;  
-  background-color: #9ccc65;
+  border: 2px solid #000000;
+  /* background-color: #42a5f5; */
+  background-color: #5c6bc0;
+  /* background-color: #9ccc65; */
 }
 
 .item-regua {

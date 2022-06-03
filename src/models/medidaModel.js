@@ -1,6 +1,6 @@
 var database = require("../database/config");
 
-function buscarUltimasMedidas(idAquario) {
+function buscarUltimasMedidas() {
     instrucaoSql =
     `select 
         nome_album as 'Nome album', 
