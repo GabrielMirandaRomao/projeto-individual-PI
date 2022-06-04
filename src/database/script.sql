@@ -67,4 +67,8 @@ values
     (null, 'mateus', 20 , 'teste27@gmail.com', '12345678',  10),
 	(null, 'diogo', 24 , 'teste28@gmail.com', '12345678', 11),
     (null, 'tiago', 22 , 'teste29@gmail.com', '12345678', 11),
-    (null, 'pedro', 24 , 'teste30@gmail.com', '12345678', 12);
+    (null, 'pedro', 24 , 'teste30@gmail.com', '12345678', 12),
+    (null, 'andre', 24 , 'teste31@gmail.com', '12345678', 13), 
+    (null, 'alexandre', 24 , 'teste32@gmail.com', '12345678', 13),
+    (null, 'vera', 24 , 'teste33@gmail.com', '12345678', 13),
+    (null, 'mauricio',20 , 'teste34@gmail.com', '12345678', 12);   
