@@ -39,7 +39,7 @@ values
 insert into usuarios 
 values 
     (null, 'felipe', 20 , 'teste1@gmail.com', '12345678',  1),
-	(null, 'fernando', 19 , 'teste2@mail.com', '12345678', 2),
+	(null, 'fernando', 19 , 'teste2@gmail.com', '12345678', 2),
     (null, 'victor', 22 , 'teste3@gmail.com', '12345678', 2),
     (null, 'guilherme', 23 , 'teste4@gmail.com', '12345678', 2),
 	(null, 'henrique', 25 , 'teste5@gmail.com', '12345678', 2),

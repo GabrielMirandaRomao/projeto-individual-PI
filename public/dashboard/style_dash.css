@@ -44,6 +44,11 @@ body {
   background-color: #000000;
 }
 
+span .img_navbar {
+  height: 15vh;
+  border-radius: 50px;
+}
+
 .header-left h1 {
   color: #ffffff;
 }
@@ -55,7 +60,7 @@ body {
 }
 
 .hello h3 {
-  color: #e3b062;
+  color: #ffffff;
   font-weight: lighter;
   font-size: 1rem;
 }
@@ -98,11 +103,11 @@ body {
 
 .dash {
   width: 80%;
-  height: 710vh;
+  height: 780vh;
   position: relative;
   top: 0;
   left: 20%;
-  background-color: #07162c;
+  background-color: #070e2c;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -161,40 +166,32 @@ body {
   justify-content: center;
   position: relative;
   width: 100%;
-  height: 15vh;
-  margin-top: 30px;
+  height: 20vh;
+  margin-top: 20px;
+  margin-left: 10rem;
   z-index: 1000;
+  /* tentar deixar melhor depois */
 }
 
 .perigo-frio {
   border: 2px solid #000000;
-  /* background-color: #5c6bc0; */
   background-color: #ff7043;
+  /* box-shadow: 0 5px 10px 0 #ff7043; */
+  padding: 3%;
+  height: 10vh;
 }
 
 .perigo-quente {
   border: 2px solid #000000;
-  /* background-color: #ff7043; */
   background-color: #9ccc65;
-  
-}
-
-.alerta-frio {
-  border: 2px solid #000000;
-  background-color: #42a5f5;
-}
-
-.alerta-quente {
-  border: 2px solid #000000;
-  background-color: #ffee58;
+  padding: 3%;
 }
 
 .ideal {
   border: 2px solid #000000;
-  /* background-color: #42a5f5; */
   background-color: #5c6bc0;
-  /* background-color: #9ccc65; */
-}
+  padding: 3%;
+} 
 
 .item-regua {
   width: 15%;
@@ -220,12 +217,12 @@ body {
 .card {
   margin: 2.5% 1%;
   width: 40%;
-  height: 90vh;
+  height: 100vh;
   flex-wrap: wrap;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  background-color: #212124;
+  background-color: #21212465;
   box-shadow: 0 10px 10px 0 #000000;
   font-size: 20px;
   border-radius: 20px;
@@ -262,11 +259,12 @@ body {
 }
 
 .cor-alerta {
-  width: 20%;
-  height: 5%;
+  width: 15%;
+  height: 10%;
   border-radius: 50px;
   margin: 5%;
   background-color: #c7c7c7;
+  box-shadow: 0 10px 15px 5px #000000;
 }
 
 .btns-dash {
