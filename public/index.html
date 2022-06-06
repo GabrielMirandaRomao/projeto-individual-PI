@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link
+      rel="shortcut icon"
+      href="assets/imgs/icon/icon.jpg"
+      type="image/x-icon"
+    />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -34,15 +39,13 @@
         </li>
       </ul>
     </header>
-
+    
     <section class="banner">
       <div class="banner_logo">
-        <img class="img_logo" src="assets/imgs/logho.jpg" alt="logo_beatles" />
+        <img class="img_logo" src="assets/imgs/logo5.png" alt="logo_beatles" />
       </div>
       <div class="banner_container"></div>
     </section>
-
-    <!-- <div class="space"></div> -->
 
     <section class="banner_slide">
       <div class="slider">
@@ -82,56 +85,104 @@
     </section>
 
     <section class="banner_texto">
-
       <div class="texto_container">
         <h1>Historia</h1>
 
-        <h3 style="color:#f0ffff;">
-          Help! 
-          It's been a hard days night
-          and I've been working like a dog
-          for eight days a week
-        </h3>
-
         <p>
-          The principal members of the Beatles were John Lennon, Paul McCartney,
-          George Harrison, and Ringo Starr. Other early members included Stuart
+          Os princiapais membros dos Beatles eram John Lennon, Paul McCartney, 
+          George Harrison, e Ringo Starr. Outros membros iniciais eram Stuart
           Sutcliffe and Pete Best.
+        </p>
+        
+        <p>
+          The Beatles foi formado envolta do membros John Lennon e Paul McCartney,
+          que já se apresentaram juntos em Liverpool, Inglaterra, em 1957.
+          Eles se apresentaram com um elenco variável de acompanhantes e 
+          sob uma lista de nomes de bandas antes de escolher seus membros finais e nome.
         </p>
 
         <p>
+          Beatlemania foi o nome dado ao frenesi popular em torno dos Beatles após
+          as primeiras aparições da banda na televisão britânica em 1963.
+          Quando os Beatles apareceram na televisão americana em 1964, 
+          a Beatlemania também estourou nos Estados Unidos. 
+          A mídia de massa criou as condições para o frenesi coletivo que foi a Beatlemania.
+        </p>
+
+        <p>
+          O primeiro sucesso dos Beatles foi a música "Love Me Do" em 1962,
+          que alcançou o número 17 nas paradas de singles do Reino Unido. 
+          A música foi lançada pela gravadora Parlophone, mas foi gravada antes da banda assinar.
+        </p>
+
+        <p>
+          Os Beatles se separaram formalmente na primavera de 1970. 
+          Todos os quatro membros passaram a produzir mais músicas individualmente ou com outros grupos.
+        </p>
+        
+        <!-- <p>
+          The principal members of the Beatles were John Lennon, Paul McCartney,
+          George Harrison, and Ringo Starr. Other early members included Stuart
+          Sutcliffe and Pete Best.
+        </p> -->
+
+        
+        <!-- <p>
           The Beatles were formed around the nucleus of members John Lennon and
           Paul McCartney, who first performed together in Liverpool, England, in
           1957. They performed with a changing cast of accompanists and under a
           changing list of band names before settling on their final members and
           name.
-        </p>
-
-        <p>
+        </p> -->
+        
+        <!-- <p>
           Beatlemania was the name given to the popular frenzy surrounding the
           Beatles after the band's first appearances on British television in
           1963. When the Beatles appeared on American television in 1964,
           Beatlemania also erupted in the United States. Mass media created the
           conditions for the collective frenzy that was Beatlemania.
-        </p>
+        </p> -->
 
-        <p>
+          <!-- <p>
           The Beatles' first hit was the song “Love Me Do” in 1962, which peaked
           at number 17 on the U.K. singles charts. The song was released by the
           record label Parlophone but had been recorded before the band was
           signed.
-        </p>
+        </p> -->
 
-        <p>
+        <!-- <p>
           The Beatles formally disbanded in the spring of 1970. All four members
           went on to produce more music individually or with other groups.
-        </p>
+        </p> -->
+
+     
       </div>
+
+      <div class="img_banner_texto"></div>
 
     </section>
 
+    <section class="banner_game">
+      <h1>
+        Qual fase você mais gosta dos Beatles? 
+      </h1>
+
+      <div class="div_button">
+        <button class="btn_game" onclick="mostrar_fase_um()">yeah yeah yeah</button>
+        <button class="btn_game"  onclick="mostrar_fase_dois()">Fase seria</button>
+        <button class="btn_game" onclick="mostrar_ambas()">Ambas</button>
+      </div>
+
+      <div id="div_albums" class="div_albums">
+        <div id="output_albums">
+        </div>
+      </div>
+    </section>
+
     <footer>
-      <div class="container">footer</div>
+      <div class="container">
+        <p>Feito com amor por um aluno &hearts;SPTech &copy; 2022</p>
+      </div>
     </footer>
   </body>
 </html>

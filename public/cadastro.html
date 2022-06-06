@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link
+      rel="shortcut icon"
+      href="assets/imgs/icon/icon.jpg"
+      type="image/x-icon"
+    />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -40,10 +45,10 @@
             <label for="">Nome</label><br />
             <input id="input_nome" type="text" />
           </div>
-          <div>
+          <!-- <div>
             <label for="">Idade</label><br />
             <input id="input_idade" type="number" min="8" />
-          </div>
+          </div> -->
           <div>
             <label for="">Email</label><br />
             <input id="input_email" type="email" />
@@ -96,7 +101,9 @@
     </section>
 
     <footer>
-      <div class="container">footer</div>
+      <div class="container">
+        <p>Feito com amor por um aluno &hearts;SPTech &copy; 2022</p>
+      </div>
     </footer>
   </body>
 </html>
@@ -106,7 +113,6 @@
   function cadastrar(){
     
     var nomeVar = (input_nome.value).toLowerCase();
-    var idadeVar = (input_idade.value).toLowerCase();
     var emailVar = (input_email.value).toLowerCase();
     var senhaVar = (input_senha.value).toLowerCase();
     var confirmacaoSenhaVar = (input_confirmacao_senha.value).toLowerCase();
@@ -124,7 +130,6 @@
   
     if (
       nomeVar == "" ||
-      idadeVar == "" ||
       emailVar == "" || 
       senhaVar == "" || 
       confirmacaoSenhaVar == ""
@@ -137,13 +142,12 @@
 
       // console.log('TESTE')
 
-      // finalizarAguardar();
-      // return false;
+      finalizarAguardar();
+      return false;
 
+    } else {
+      setInterval(sumirMensagem, 5000);
     }
-    // else {
-    //   setInterval(sumirMensagem, 5000);
-    // }
     
     if (emailVar.startsWith('admin')){
       mensagem_erro.innerHTML = `
@@ -151,13 +155,12 @@
         Seu Email não pode começar com 'admin'
       </span>`;
 
-      // finalizarAguardar();
-      // return false;
+      finalizarAguardar();
+      return false;
 
+    } else {
+      setInterval(sumirMensagem, 5000);
     }
-    // else {
-    //   setInterval(sumirMensagem, 5000);
-    // }
     
     if (emailVar.indexOf('@') == -1){
       mensagem_erro.innerHTML = `
@@ -165,13 +168,12 @@
         Seu email está sem o "@"!
       </span>`;
 
-      // finalizarAguardar();
-      // return false;
+      finalizarAguardar();
+      return false;
 
-    } 
-    // else {
-    //   setInterval(sumirMensagem, 5000);
-    // }
+    } else {
+      setInterval(sumirMensagem, 5000);
+    }
     
     if (emailVar.indexOf('.com') == -1 && emailVar.indexOf('.br') == -1){
       mensagem_erro.innerHTML = `
@@ -179,13 +181,12 @@
         Seu email está sem o ".com" ou ".com.br"
       </span>`;
 
-    //  finalizarAguardar();
-    //   return false;
+     finalizarAguardar();
+      return false;
 
-    } 
-    // else {
-    //   setInterval(sumirMensagem, 5000);
-    // }
+    } else {
+      setInterval(sumirMensagem, 5000);
+    }
 
      if (senhaVar != confirmacaoSenhaVar){
       mensagem_erro.innerHTML = `
@@ -193,15 +194,13 @@
         A senha está diferente! 
       </span>`;
 
-      // finalizarAguardar();
-      // return false;
+      finalizarAguardar();
+      return false;
       
-    } 
-    // else {
-    //  setInterval(sumirMensagem, 5000);
-    // }
+    } else {
+     setInterval(sumirMensagem, 5000);
+    }
 
-      
      // Enviando o valor da nova input
      fetch("/usuarios/cadastrar", {
       method: "POST",
@@ -212,7 +211,6 @@
         // crie um atributo que recebe o valor recuperado aqui
         // Agora vá para o arquivo routes/usuario.js
         nomeServer: nomeVar,
-        idadeServer: idadeVar,
         emailServer: emailVar,
         senhaServer: senhaVar,
         albumServer: albumVar,

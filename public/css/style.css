@@ -2,13 +2,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family:  'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 ::-webkit-scrollbar {
-
   width: 0.8em;
 }
 
@@ -45,7 +44,7 @@ header {
 
 header.sticky {
   padding: 5px 100px;
-  background: #ffffff9d;
+  background: #ffffffc0;
   height: 15vh;
 }
 
@@ -136,8 +135,9 @@ header.sticky .navbar li .quarto_link {
 
 .banner {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   background-color: #131313;
+  height: 120vh;
 }
 
 .banner_container {
@@ -147,20 +147,21 @@ header.sticky .navbar li .quarto_link {
   border-radius: 20px;
   background-image: url("../assets/imgs/beatles_banner.png");
   background-size: cover;
-  box-shadow: 8px 5px 4px 0 #363636;
 }
 
 .img_logo {
-  height: 90vh;
+  height: 60%;
+  border-radius: 20px;
+  margin-left: 10%;
 }
 
 .banner_logo {
   background-color: #131313;
-  font-size: 50px;
   width: 35%;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: flex-start;
+  margin-top: 200px;
 }
 
 .texto_slide {
@@ -174,7 +175,7 @@ header.sticky .navbar li .quarto_link {
 
 .texto_slide h2 {
   border-bottom: 2px solid #000000;
-} 
+}
 
 .banner_slide {
   height: 100vh;
@@ -224,7 +225,7 @@ header.sticky .navbar li .quarto_link {
 }
 
 .manual_btn {
-  border: 2px solid #000000;
+  border: 2px solid #ffffff;
   padding: 10px;
   border-radius: 10px;
   cursor: pointer;
@@ -278,7 +279,7 @@ header.sticky .navbar li .quarto_link {
 }
 
 .navigation_auto div {
-  border: 2px solid #000000;
+  border: 2px solid #ffffff;
   padding: 10px;
   border-radius: 10px;
   transition: 1s;
@@ -311,56 +312,225 @@ header.sticky .navbar li .quarto_link {
 .banner_texto {
   display: flex;
   justify-content: center;
+  align-items: center;
+  background-color: #131313;
+  height: 100vh;
+  padding: 5%;
 }
 
 .texto_container {
   display: flex;
   width: 50%;
-  height: 130vh;
+  height: 80vh;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  color: #ffffff;
+  border-radius: 20px;
+  background-color: #ffffff0e;
+  padding: 0 5% 2% 5%;
+}
+
+.img_banner_texto {
+  background-image: url("../assets/imgs/john_paul.jpg");
+  background-size: cover;
+  height: 75vh;
+  width: 50%;
+  border-radius: 20px;
+  margin-left: 2%;
 }
 
 /* Banner texto ------------------------ */
 
-/* Home ------------------------------------------------------------------------- */
+/* Banner Game */
 
-/* .space {
-  height: 50px;
-} */
+.banner_game {
+  height: 130vh;
+  padding-top: 5%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  color: #ffffff;
+  background-color: #131313;
+}
+
+.banner_game h1 {
+  position: relative;
+  font-size: 35px;
+  font-weight: lighter;
+  font-family: "Source Code Pro", monospace;
+}
+
+.banner_game h1::before,
+.banner_game h1::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.banner_game h1::before {
+  background: #131313;
+  animation: typewriter 6s steps(38) 1s forwards;
+}
+
+.banner_game h1::after {
+  width: 0.125em;
+  background: #ffffff;
+  animation: typewriter 6s steps(38) 1s forwards, 
+  blick 700ms steps(38) infinite;
+}
+
+@keyframes typewriter {
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes blink {
+  to {
+    background: transparent;
+  }
+}
+
+.div_button {
+  width: 50vw;
+  height: 15vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.div_button button {
+  padding: 20px 50px;
+  font-size: 1.25rem;
+  position: relative;
+  height: 80%;
+  width: 30%;
+}
+
+.btn_game {
+  background-color: #000000;
+  color: #ffffff;
+  border-radius: 30px;
+  transition: transform 0.3 ease;
+}
+
+.btn_game::after,
+.btn_game::before {
+  content: "";
+  position: absolute;
+  opacity: 0.3;
+  background-color: #000000;
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  transition: transform 0.3s ease;
+}
+
+.btn_game:hover {
+  transform: translate(-12px, -12px);
+}
+
+.btn_game:hover::after {
+  transform: translate(6px, 6px);
+}
+
+.btn_game:hover::before {
+  transform: translate(12px, 12px);
+}
+
+.div_albums {
+  background-color: #ffffff0e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 20px;
+  height: 80vh;
+  width: 60%;
+}
+
+#output_albums {
+  position: absolute;
+  z-index: 1000;
+  font-weight: bolder;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  color: #919191fa;
+}
+
+#output_albums h4 {
+  color: #ffffff;
+  font-size: 40px;
+  font-weight: lighter;
+  background-color: #1313133f;
+  border-radius: 20px;
+  padding: 2%;
+}
+
+.div_albums .img_album {
+  width: 50%;
+  border-radius: 20px;
+  height: 50vh;
+}
+
+.img_link {
+  margin-top: 10%;
+  height: 10vh;
+}
+
+/* Banner Game ------------------------ */
+
+/* Home ------------------------------------------------------------------------- */
 
 /* Cadastro */
 
 .cadastro {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   align-items: center;
   margin-top: 8%;
   height: 130vh;
+  background-color: #131313;
 }
 
 .cadastro_container {
   width: 35%;
+  height: 90vh;
   padding: 40px;
-  margin-left: 5%;
   box-sizing: border-box;
   border: 1px solid #000000;
-  box-shadow: 0 10px 10px #161618e8;
   border: none;
-  border-radius: 50px;
+  border-radius: 20px;
   display: flex;
   align-items: center;
   flex-direction: column;
+  background-image: radial-gradient(
+    /* #fc3ab3 3%,
+    #c4b122 45%,
+    #008fb7 50%,
+    #fc4750 85% */ #f82ba9bb,
+    #ffe732bb,
+    #00aedfbb,
+    #fd3640bb
+  );
 }
 
 .banner_cadastro {
   height: 90vh;
-  width: 60%;
+  width: 40vw;
   border-radius: 20px;
-  box-shadow: 0 10px 10px #161618e8;
-  margin: 2%;
-  background-image: url("../assets/imgs/beatles_cadastro.png");
+  /* margin: 2%; */
+  background-image: url("../assets/imgs/beatles_color.png");
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -388,12 +558,17 @@ header.sticky .navbar li .quarto_link {
   outline: none;
   border: none;
   border-bottom: 2px solid #000000;
+  background-color: #00000000;
+}
+
+input:-internal-autofill-selected {
+  background-color: #00000000;
 }
 
 /* label login e cadastro */
 .cadastro_container label,
 .login_container label {
-  font-size: 15px;
+  font-size: 18px;
   font-weight: bolder;
 }
 
@@ -435,6 +610,10 @@ select {
   position: relative;
 }
 
+.select_container span {
+  font-size: 18px;
+}
+
 .custom_arrow {
   position: absolute;
   top: 2rem;
@@ -457,124 +636,136 @@ select {
   align-items: center;
   margin-top: 3%;
   height: 120vh;
+  background-color: #131313;
 }
 
 .card_login {
-  width: 90%;
+  width: 100%;
   height: 80%;
   margin-top: 4%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   padding: 20px;
   box-sizing: border-box;
-  border: 1px solid #000000;
-  box-shadow: 0 10px 10px #161618e8;
   border: none;
   border-radius: 50px;
 }
 
 .login_container {
-  width: 40%;
+  width: 35%;
   height: 80%;
+  border-radius: 20px;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  /* background-image: url('../assets/imgs/all_you_need.jpg');
+  background-size: cover; */
+  background-image: radial-gradient(
+    /* #fc3ab3 3%,
+    #c4b122 45%,
+    #008fb7 50%,
+    #fc4750 85% */ #fc3ab3,
+    #c4b122,
+    #008fb7,
+    #fc4750
+  );
 }
 
 .banner_login {
-  width: 60%;
-  height: 80%;
-  border-radius: 20px;
-  background-image: url("../assets/imgs/login_beatles.jpg");
-  background-size: cover;
-  box-shadow: 0 10px 10px #161618e8;
+  width: 40%;
+  height: 60%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.img_login {
+  width: 90%;
 }
 
 /* login ------------------------------------------------------------------------- */
 
 /* Albums */
-  .banner_galeria {
-    /* width: 10vw; */
-    display: flex;
-    flex-direction: column;
-    background-color: #131313;
-    /* justify-content: center; */
-  }
+.banner_galeria {
+  /* width: 10vw; */
+  display: flex;
+  flex-direction: column;
+  background-color: #131313;
+  /* justify-content: center; */
+}
 
-  .linha_um {
-    margin-top: 20vh;
-  }
+.linha_um {
+  margin-top: 20vh;
+}
 
-  .linha_um,
-  .linha_dois,
-  .linha_tres,
-  .linha_quatro,
-  .linha_cinco
-  {
-    display: flex;
-    flex-direction: row;
-    /* width: 100%; */
-  }
+.linha_um,
+.linha_dois,
+.linha_tres,
+.linha_quatro,
+.linha_cinco {
+  display: flex;
+  flex-direction: row;
+  /* width: 100%; */
+}
 
-  .album {
-    position: relative;
-  }
+.album {
+  position: relative;
+}
 
-  .album_img {
-    height: 70vh;
-    width: 33vw;
-    transition: .5s ease;
-    backface-visibility: hidden;
-  }
-  
-  .button_search {
-    transition: .5s ease;
-    opacity: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    text-align: center;
-  }
-  
-  .album:hover .album_img {
-    opacity: 0.5;
-    background-color: #000000;
-  }
-  
-  .album:hover .button_search {
-    opacity: 1;
-  }
+.album_img {
+  height: 70vh;
+  width: 33vw;
+  transition: 0.5s ease;
+  backface-visibility: hidden;
+}
 
-  .search {
-    /* background-color: #2a2b2b; */
-    color: white;
-    font-size: 16px;
-    /* padding: 16px 32px; */
-    height: 80px;
-    width: 80px;
-    background-image: url("../assets/imgs/search.png");
-    background-size: cover;
-  }
+.button_search {
+  transition: 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.album:hover .album_img {
+  opacity: 0.5;
+  background-color: #000000;
+}
+
+.album:hover .button_search {
+  opacity: 1;
+}
+
+.search {
+  /* background-color: #2a2b2b; */
+  color: white;
+  font-size: 16px;
+  /* padding: 16px 32px; */
+  height: 80px;
+  width: 80px;
+  background-image: url("../assets/imgs/search.png");
+  background-size: cover;
+}
 
 /* albums ------------------------------------------------------------------------- */
 
 /* Footer */
 
 footer {
-  height: 25vh;
+  height: 50vh;
   color: #ffffff;
   background-color: #000000;
   font-size: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: url("../assets/imgs/footer.png");
+  background-size: cover;
 }
 
 /* ------------------------ */
@@ -597,7 +788,7 @@ footer {
   align-items: center;
   border: 2px solid #000000;
   animation: validacao 1s;
-  transition:linear                                                                                                                        2s;
+  transition: linear 2s;
 }
 
 @keyframes validacao {

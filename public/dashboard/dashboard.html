@@ -2,9 +2,9 @@
 <html lang="pt-br">
   <head>
     <link
-      rel="shortcut icon"
-      href="../assets/icon/favicon.ico"
-      type="image/x-icon"
+    rel="shortcut icon"
+    href="../assets/imgs/icon/icon.jpg"
+    type="image/x-icon"
     />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -20,7 +20,10 @@
       rel="stylesheet"
     />
 
-    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script> -->
+    <!-- <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"
+    ></script> -->
 
     <!-- scripts do Chart.js -->
     <script
@@ -60,18 +63,33 @@
           >
             Grafico 1
           </button>
-          <!-- <button class="btn-chart" onclick="obterDadosGrafico(2)">
-            Grafico 2
-          </button>
-          <button class="btn-chart" onclick="obterDadosGrafico(3)">
-            Grafico  3
-          </button>
-          <button class="btn-chart" onclick="obterDadosGrafico(4)">
-            Grafico  4
-          </button> -->
         </div>
         <div class="graph">
           <canvas id="my_chart" class="grafico"></canvas>
+        </div>
+        <div class="bubbles">
+          <span style="--i: 11"></span>
+          <span style="--i: 12"></span>
+          <span style="--i: 24"></span>
+          <span style="--i: 10"></span>
+          <span style="--i: 14"></span>
+          <span style="--i: 23"></span>
+          <span style="--i: 18"></span>
+          <span style="--i: 16"></span>
+          <span style="--i: 19"></span>
+          <span style="--i: 20"></span>
+          <span style="--i: 22"></span>
+          <span style="--i: 25"></span>
+          <span style="--i: 18"></span>
+          <span style="--i: 21"></span>
+          <span style="--i: 15"></span>
+          <span style="--i: 13"></span>
+          <span style="--i: 26"></span>
+          <span style="--i: 17"></span>
+          <span style="--i: 13"></span>
+          <span style="--i: 28"></span>
+          <span style="--i: 29"></span>
+          <span style="--i: 30"></span>
         </div>
       </div>
     </div>
@@ -119,6 +137,7 @@
     console.log("iniciando plotagem do gráfico...");
 
     var qtd_votos = [
+      0,
       resposta[12].votos,
       resposta[11].votos,
       resposta[10].votos,
@@ -135,6 +154,7 @@
     ];
 
     var album = [
+      "",
       resposta[12].nome_album,
       resposta[11].nome_album,
       resposta[10].nome_album,
@@ -154,22 +174,23 @@
       labels: album,
       datasets: [
         {
-          label: "My First Dataset",
           data: qtd_votos,
+          label: "Grafico de albums",
           backgroundColor: [
-            "rgba(255, 99, 132, 0.2)",
-            "rgba(255, 159, 64, 0.2)",
-            "rgba(255, 205, 86, 0.2)",
-            "rgba(75, 192, 192, 0.2)",
-            "rgba(54, 162, 235, 0.2)",
-            "rgba(153, 102, 255, 0.2)",
-            "#0000008a",
-            "rgba(255, 99, 132, 0.2)",
-            "rgba(255, 159, 64, 0.2)",
-            "rgba(255, 205, 86, 0.2)",
-            "rgba(75, 192, 192, 0.2)",
-            "rgba(54, 162, 235, 0.2)",
-            "rgba(153, 102, 255, 0.2)",
+            "#ffffff",
+            "#FA5901",
+            "#FAE607",
+            "#12F5FF",
+            "#0066DB",
+            "#6415DB",
+            "#0a0a0a",
+            "#E01200",
+            "#ED04FA",
+            "#E46609",
+            "#00E010",
+            "#8DAD00",
+            "#0AC2FF",
+            "#C10A00",
           ],
           borderColor: [
             "rgb(255, 99, 132)",
@@ -186,32 +207,51 @@
             "rgb(54, 162, 235)",
             "rgb(153, 102, 255)",
           ],
-          borderWidth: 1,
+          borderWidth: 0,
         },
       ],
     };
 
     const config = {
-      type: "bar",
+      type: "horizontalBar",
       data: dados,
       //Configurações do gráfico
       options: {
+        legend: {
+          labels: {
+            // This more specific font property overrides the global property
+            fontColor: "black",
+          },
+        },
         scales: {
-          // x: {
-          //     type: 'linear',
-          //     display: true, 
-          //     position: 'left',
-          //     beginAtZero: true,
-          //     min: 1,
-          //   max: 100
-          //   },
-          y: {
-            beginAtZero: true,
-            max: 100,
-            min: 0
-            
-          }
-        }
+          xAxes: [
+            {
+              stacked: true,
+              barPercentage: 1,
+              // barThickness: 3,
+              // maxBarThickness: 8,
+              minBarLength: 1,
+              gridLines: {
+                offsetGridLines: true,
+              },
+            },
+          ],
+          yAxes: [
+            {
+              stacked: true,
+              barPercentage: 1,
+              barThickness: 14,
+              maxBarThickness: 15,
+              minBarLength: 1,
+              gridLines: {
+                offsetGridLines: true,
+              },
+              ticks: {
+                beginAtZero: true,
+              },
+            },
+          ],
+        },
       },
     };
 
@@ -227,7 +267,7 @@
       // console.log(dados.datasets[0].data[i]);
     }
 
-    console.log(JSON.stringify(registro));
+    // console.log(JSON.stringify(registro));
 
     // var ctx = document.getElementById("my_chart").getContext("2d");
     // canvas_grafico.getContext("2d");
@@ -244,8 +284,8 @@
       sendData();
     }, 2000);
 
-    //Atualiza os dados de 5 em 5 segundos
-    // setTimeout(() => atualizarGrafico(nome_album, dados), 2000);
+    // Atualiza os dados de 5 em 5 segundos
+    // setTimeout(() => atualizarGrafico(dados), 2000);
   }
 
   // só mexer se quiser alterar o tempo de atualização

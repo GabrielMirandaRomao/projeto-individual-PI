@@ -107,16 +107,43 @@ span .img_navbar {
   position: relative;
   top: 0;
   left: 20%;
-  background-color: #070e2c00;
+  background-color: #131313;
   display: flex;
   flex-direction: column;
   align-items: center;
   overflow: hidden;
 }
 
+.dash .bubbles{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* .bubbles {
+  display: flex;
+} */
+
+.dash .bubbles span {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background-color: #38eef5;
+  margin: 5px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 10px #4fc3dc44,
+  0 0 50px #4fc3dc,
+  0 0 100px #4fc3dc;
+  animation: animate 20s linear infinite;
+  animation-duration: calc(120s / var(--i)) ;
+}
+
 .dash_card {
   width: 80%;
-  height: 800vh;
+  height: 780vh;
   position: relative;
   top: 0;
   left: 20%;
@@ -207,10 +234,11 @@ span .img_navbar {
 } 
 
 .item-regua {
-  width: 15%;
+  width: 20%;
   margin: 5px;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   text-align: center;
   border-radius: 20px;
@@ -221,7 +249,7 @@ span .img_navbar {
   flex-wrap: wrap;
   justify-content: flex-end;
   height: 100vh;
-  width: 95%;
+  width: 90%;
   align-items: center;
   color: white;
   z-index: 1000;
@@ -244,7 +272,7 @@ span .img_navbar {
 
 .card p {
   margin: 0;
-  font-size: 50px;
+  font-size: 30px;
   font-weight: lighter;
   text-align: left;
 }
@@ -305,10 +333,15 @@ span .img_navbar {
 }
 
 .grafico {
-  width: 80%;
+  width: 100%;
   height: 75vh;
-  background-color: #21212431;
-  box-shadow: 0 10px 10px 0 #000000;
+  background-color: #ffffff9c;
+  box-shadow: 0 5px 5px 0 #000000;
   margin: 5%;
   border-radius: 10px;
+}
+
+#my_chart {
+  position: relative;
+  z-index: 10000;
 }
