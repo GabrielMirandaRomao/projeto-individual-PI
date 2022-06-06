@@ -374,13 +374,13 @@ header.sticky .navbar li .quarto_link {
 
 .banner_game h1::before {
   background: #131313;
-  animation: typewriter 6s steps(38) 1s forwards;
+  animation: typewriter 6s steps(38) 0.5s forwards;
 }
 
 .banner_game h1::after {
   width: 0.125em;
   background: #ffffff;
-  animation: typewriter 6s steps(38) 1s forwards, 
+  animation: typewriter 6s steps(38) 0.5s forwards, 
   blick 700ms steps(38) infinite;
 }
 
