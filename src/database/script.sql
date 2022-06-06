@@ -14,26 +14,27 @@ create table usuarios (
 create table albums (
 	id_album int auto_increment primary key,
     nome_album varchar(60),
-    ano_album char(4)
+    ano_album char(4),
+    fase int
 );
 
 -- no campo fk_album, pegar o valor da combo box, exemplo, value = 2.
 
 insert into albums 
 values
-    (null, 'please please me', '1963'),
-    (null, 'with the beatles', '1963'),
-    (null, 'a hard days night', '1964'),
-    (null, 'beatles for sale', '1964'),
-    (null, 'help!', '1965'),
-    (null, 'rubber soul', '1965'),
-	(null, 'revolver', '1966'),
-	(null, 'sgt.peppers ', '1967'),
-    (null, 'magical mystery tour', '1967'),
-    (null, 'the beatles - white album', '1968'),
-    (null, 'yellow submarine', '1969'),
-    (null, 'abbey road', '1969'),
-	(null, 'let it be', '1969');
+    (null, 'please please me', '1963', 1),
+    (null, 'with the beatles', '1963', 1),
+    (null, 'a hard days night', '1964', 1),
+    (null, 'beatles for sale', '1964', 1),
+    (null, 'help!', '1965', 1),
+    (null, 'rubber soul', '1965', 1),
+	(null, 'revolver', '1966', 2),
+	(null, 'sgt.peppers ', '1967', 2),
+    (null, 'magical mystery tour', '1967', 2),
+    (null, 'the beatles - white album', '1968', 2),
+    (null, 'yellow submarine', '1969', 2),
+    (null, 'abbey road', '1969', 2),
+	(null, 'let it be', '1969',2);
 
 insert into usuarios 
 values 

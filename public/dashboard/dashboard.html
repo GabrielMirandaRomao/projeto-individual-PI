@@ -67,6 +67,9 @@
         <div class="graph">
           <canvas id="my_chart" class="grafico"></canvas>
         </div>
+        <div class="graph">
+          <canvas id="my_chart2" class="grafico"></canvas>
+        </div>
         <div class="bubbles">
           <span style="--i: 11"></span>
           <span style="--i: 12"></span>
@@ -137,7 +140,7 @@
     console.log("iniciando plotagem do gráfico...");
 
     var qtd_votos = [
-      0,
+      // 0,
       resposta[12].votos,
       resposta[11].votos,
       resposta[10].votos,
@@ -153,8 +156,19 @@
       resposta[0].votos,
     ];
 
+    var sessao1 = Number(resposta[6].votos) +
+    Number(resposta[5].votos) 
+
+    console.log("Tentando " + sessao1)
+
+    //   resposta[4].votos +
+    //   resposta[3].votos +
+    //   resposta[2].votos +
+    //   resposta[1].votos +
+    //   resposta[0].votos
+
     var album = [
-      "",
+      // "",
       resposta[12].nome_album,
       resposta[11].nome_album,
       resposta[10].nome_album,
@@ -193,19 +207,19 @@
             "#C10A00",
           ],
           borderColor: [
-            "rgb(255, 99, 132)",
-            "rgb(255, 159, 64)",
-            "rgb(255, 205, 86)",
-            "rgb(75, 192, 192)",
-            "rgb(54, 162, 235)",
-            "rgb(153, 102, 255)",
-            "rgb(201, 203, 207)",
-            "rgb(255, 99, 132)",
-            "rgb(255, 159, 64)",
-            "rgb(255, 205, 86)",
-            "rgb(75, 192, 192)",
-            "rgb(54, 162, 235)",
-            "rgb(153, 102, 255)",
+            "#000000",
+            // "rgb(255, 159, 64)",
+            // "rgb(255, 205, 86)",
+            // "rgb(75, 192, 192)",
+            // "rgb(54, 162, 235)",
+            // "rgb(153, 102, 255)",
+            // "rgb(201, 203, 207)",
+            // "rgb(255, 99, 132)",
+            // "rgb(255, 159, 64)",
+            // "rgb(255, 205, 86)",
+            // "rgb(75, 192, 192)",
+            // "rgb(54, 162, 235)",
+            // "rgb(153, 102, 255)",
           ],
           borderWidth: 0,
         },
@@ -248,6 +262,10 @@
               },
               ticks: {
                 beginAtZero: true,
+                fontColor: "#000000",
+                fontFamily: "monospace",
+                fontSize: 15,
+                // fontWeigth
               },
             },
           ],
@@ -256,6 +274,64 @@
     };
 
     const myChart = new Chart(document.getElementById("my_chart"), config);
+
+    // grafico pizza 
+
+    data = {
+    datasets: [{
+        data: [dados2],
+
+    }],
+
+    // These labels appear in the legend and in the tooltips when hovering different arcs
+    labels: [
+        'Red',
+        'Yellow',
+        'Blue'
+    ]
+};
+
+const dados2 = {
+      labels: sessao1,
+      datasets: [
+        {
+          data: qtd_votos,
+          label: "Grafico de albums",
+          backgroundColor: [
+            "#ffffff",
+            "#FA5901",
+            "#FAE607",
+            "#12F5FF",
+            "#0066DB",
+            "#6415DB",
+            "#0a0a0a",
+            "#E01200",
+            "#ED04FA",
+            "#E46609",
+            "#00E010",
+            "#8DAD00",
+            "#0AC2FF",
+            "#C10A00",
+          ],
+        },
+      ],
+    };
+
+
+    var myPieChart = new Chart(my_chart2, {
+    type: 'pie',
+    data: sessao1
+    // options: options
+      });
+
+    // And for a doughnut chart
+    //   var myDoughnutChart = new Chart(ctx, {
+    //   type: 'doughnut',
+    //   data: data,
+    //   options: options
+    // });
+
+    const myChartpie = new Chart(document.getElementById("my_chart2"), config);
 
     for (i = 0; i < resposta.length; i++) {
       var registro = resposta[i];
@@ -267,7 +343,7 @@
       // console.log(dados.datasets[0].data[i]);
     }
 
-    // console.log(JSON.stringify(registro));
+    console.log(JSON.stringify(registro));
 
     // var ctx = document.getElementById("my_chart").getContext("2d");
     // canvas_grafico.getContext("2d");
@@ -324,4 +400,6 @@
         );
       });
   }
+
+  
 </script>

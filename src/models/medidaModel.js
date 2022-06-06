@@ -26,7 +26,20 @@ function buscarMedidasEmTempoReal(id_usuario) {
     return database.executar(instrucaoSql);
 }
 
+// function buscarFases(){
+//     instrucaoSql = 
+//     `select 
+//         count(fase) 
+//         from 
+//         albums 
+//         group by fase;
+//     `;
+//     console.log("Executando a instrução SQL: \n" + instrucaoSql);
+//     return database.executar(instrucaoSql)
+// }
+
 module.exports = {
     buscarUltimasMedidas,
-    buscarMedidasEmTempoReal
+    buscarMedidasEmTempoReal,
+    // buscarFases
 }
