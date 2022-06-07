@@ -49,26 +49,21 @@ span .img_navbar {
   border-radius: 50px;
 }
 
-.header-left h1 {
-  color: #ffffff;
-}
-
 .hello {
   width: 100%;
+  height: 20vh;
   display: flex;
-  justify-content: space-evenly;
-}
-
-.hello h3 {
+  flex-direction: column;
+  justify-content: space-around;
+  padding-left: 5%;
   color: #ffffff;
-  font-weight: lighter;
-  font-size: 1rem;
 }
 
-.hello h3 span {
-  font-weight: bolder;
-  border-bottom: 2px solid #e3b062;
-}
+.hello h2 span {
+  font-size: larger;
+  color: #ffffff;
+  border-bottom: 2px solid #ff8411 ;
+} 
 
 .btn-nav {
   width: 30%;
@@ -78,7 +73,6 @@ span .img_navbar {
   text-align: center;
   padding: 2% 5%;
   cursor: pointer;
- 
 }
 
 .btn-nav a {
@@ -103,11 +97,12 @@ span .img_navbar {
 
 .dash {
   width: 80%;
-  height: 400vh;
+  height: 200vh;
   position: relative;
   top: 0;
   left: 20%;
   background-color: #131313;
+  color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -315,11 +310,6 @@ span .img_navbar {
   margin-top: 30px;
 }
 
-/* .graph {
-  margin: auto;
-  padding-top: 45px;
-} */
-
 .btn-chart {
   font-family: "Exo 2", sans-serif;
   border: 0;
@@ -333,7 +323,7 @@ span .img_navbar {
 }
 
 .grafico {
-  width: 100%;
+  width: 70%;
   height: 75vh;
   background-color: #ffffff9c;
   box-shadow: 0 5px 5px 0 #000000;
@@ -344,4 +334,11 @@ span .img_navbar {
 #my_chart {
   position: relative;
   z-index: 10000;
+}
+
+#my_chart2 {
+  position: relative;
+  z-index: 10000;
+  padding: 2%;
+  width: 65vw;
 }

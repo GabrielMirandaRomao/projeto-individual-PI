@@ -12,9 +12,110 @@ setInterval(function () {
   }
 }, 8000);
 
-function teste() {
-  alert("teste");
+// ------------------------
+function mostrar_musica(musicas_albums) {
+  document.getElementById("modal").style.display = "flex";
+  console.log(musicas_albums);
+  document.getElementById("modal").innerHTML = ` 
+  <div class="div_modal_btn">
+    <button class="btn_fechar_modal" onclick="fechar_modal()">
+      <img class="img_fechar_modal" src="./assets/imgs/icon/close.png" alt=""> 
+    </button>
+  </div>
+  <h3> Minhas músicas favoritas desse album!</h3>
+  <ul>
+    <li><h3>${musicas_albums[0]}<h3/></li>
+    <li><h3>${musicas_albums[1]}<h3/></li>
+    <li><h3>${musicas_albums[2]}<h3/></li>
+    <li><h3>${musicas_albums[3]}<h3/></li>
+  </ul>
+`;
 }
+
+function fechar_modal() {
+  document.getElementById("modal").style.display = "none";
+}
+
+// musicas_albums.please_please_me[0]
+
+var musicas_albums = {
+  please_please_me: [
+    "Please please me",
+    "Twist and shout",
+    "Love me do",
+    "I saw her standing there",
+  ],
+  with_the_beatles: [
+    "All my loving",
+    "It won't be long",
+    "Don t bother me",
+    "Please mister postman",
+  ],
+  a_hard_days_night: [
+    "A hard days night",
+    "Can't buy me love",
+    "If I fell",
+    "Any time at all",
+  ],
+  beatles_for_sale: [
+    "No reply",
+    "Eight days a week",
+    "I'm a loser",
+    "rock and roll music",
+  ],
+  help: [
+    "Help!", 
+    "Ticket to ride", 
+    "Yesterday", 
+    "Dizzy miss lizzy"
+  ],
+  rubber_soul: [
+    "Drive my car",
+    "I'm looking through you",
+    "In my life",
+    "If I need someone",
+  ],
+  revolver: ["Eleanor Rigby", "", "", ""],
+  sgt_peppers: [
+    "Sgt. pepper's lonely hearts club band",
+    "With a little help from my friends",
+    "Lucy in the sky with diamonds",
+    "Getting better",
+  ],
+  yellow_submarine: [
+    "All you need is love", 
+    "Yellow submarine", 
+    "", ""
+  ],
+  magical_mystery_tour: [
+    "Hello, Goodbye",
+    "Penny lane",
+    "I am the walrus",
+    "All you need is love",
+  ],
+  white_album: [
+    "Black bird",
+    "Ob-la-di, ob-la-da",
+    "While my guitar gently weeps",
+    "Helter skelter",
+  ],
+  abbey_road: [
+    "Here comer the sun",
+    "Come together",
+    "Something",
+    "Oh! Darling",
+  ],
+  let_it_be: [
+    "Two of us", 
+    "Let it be", 
+    "I've got a feeling", 
+    "Get back"
+  ],
+  the_beatles_1962_1966: ["Todas", "pois", "tem", "as melhores"],
+  the_beatles_1967_1970: ["Todas", "pois", "tem", "as melhores"],
+};
+
+// -------------------------
 
 function mostrar_fase_um() {
   var random_number = Math.floor(Math.random() * 6);
@@ -116,20 +217,22 @@ function mostrar_fase_dois() {
 
 function mostrar_ambas() {
   var random_number = Math.floor(Math.random() * 2);
- 
+
   var duas_fases = [
     "assets/imgs/albums/the_beatles_1962_1966.jpg",
     "assets/imgs/albums/the_beatles_1967_1970.jpg",
   ];
 
   var links = [
-      "https://open.spotify.com/album/6126O4XLYAfzU3961ziahP",
-      "https://open.spotify.com/album/1cTeNkeINtXiaMLlashAKs"
-  ]
+    "https://open.spotify.com/album/6126O4XLYAfzU3961ziahP",
+    "https://open.spotify.com/album/1cTeNkeINtXiaMLlashAKs",
+  ];
 
   document.getElementById("div_albums").innerHTML = "";
 
-  for (var contador = 0; contador < 26; contador++) {
+  var contador = 0;
+
+  while (contador < 26) {
     if (contador % 2) {
       document.getElementById("div_albums").innerHTML += `
       <h4 style="color:#919191;">
@@ -145,8 +248,9 @@ function mostrar_ambas() {
     } else {
       document.getElementById("div_albums").innerHTML += ` <br />`;
     }
+    contador++;
   }
-  //   document.getElementById("output_albums").style.display = 'flex';
+
   document.getElementById("output_albums").innerHTML = `
   <h4> Você vai gostar de ouvir esse album </h4><br />
     <img class="img_album" src="${duas_fases[random_number]}" alt="">

@@ -2,9 +2,9 @@
 <html lang="pt-br">
   <head>
     <link
-    rel="shortcut icon"
-    href="../assets/imgs/icon/icon.jpg"
-    type="image/x-icon"
+      rel="shortcut icon"
+      href="../assets/imgs/icon/icon.jpg"
+      type="image/x-icon"
     />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -37,10 +37,17 @@
 
     <div class="janela">
       <div class="header-left">
-        <h1>Dashboard</h1>
+        <span>
+          <img
+            class="img_navbar"
+            src="../assets/imgs/abbey_road.gif"
+            alt="gif"
+          />
+        </span>
+
 
         <div class="hello">
-          <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+          <h2>Olá, <span id="b_usuario">usuário</span>!</h2>
         </div>
 
         <div class="btn-nav">
@@ -57,16 +64,18 @@
       <div class="dash">
         <div class="btns-dash">
           <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
-          <button
+          <!-- <button
             class="btn-chart"
             onclick="obterDadosGrafico(sessionStorage.ID_USUARIO)"
           >
             Grafico 1
-          </button>
+          </button> -->
         </div>
+        <h2>Visão geral de votos</h2>
         <div class="graph">
           <canvas id="my_chart" class="grafico"></canvas>
         </div>
+        <h2> Indice de preferencia </h2>
         <div class="graph">
           <canvas id="my_chart2" class="grafico"></canvas>
         </div>
@@ -140,7 +149,6 @@
     console.log("iniciando plotagem do gráfico...");
 
     var qtd_votos = [
-      // 0,
       resposta[12].votos,
       resposta[11].votos,
       resposta[10].votos,
@@ -156,19 +164,7 @@
       resposta[0].votos,
     ];
 
-    var sessao1 = Number(resposta[6].votos) +
-    Number(resposta[5].votos) 
-
-    console.log("Tentando " + sessao1)
-
-    //   resposta[4].votos +
-    //   resposta[3].votos +
-    //   resposta[2].votos +
-    //   resposta[1].votos +
-    //   resposta[0].votos
-
     var album = [
-      // "",
       resposta[12].nome_album,
       resposta[11].nome_album,
       resposta[10].nome_album,
@@ -189,39 +185,38 @@
       datasets: [
         {
           data: qtd_votos,
-          label: "Grafico de albums",
+          label: "Grafico de votos por album",
           backgroundColor: [
-            "#ffffff",
-            "#FA5901",
             "#FAE607",
-            "#12F5FF",
+            "#ffffff",
             "#0066DB",
-            "#6415DB",
-            "#0a0a0a",
-            "#E01200",
-            "#ED04FA",
+            "#FA5901",
+            "#12F5FF",
+            "#00C118",
+            "#BABBCF",
+            "#F7CC14",
+            "#FF0D90",
+            "#ffffff",
+            "#10CCE0",
+            "#E00109",
             "#E46609",
-            "#00E010",
-            "#8DAD00",
-            "#0AC2FF",
-            "#C10A00",
           ],
           borderColor: [
             "#000000",
-            // "rgb(255, 159, 64)",
-            // "rgb(255, 205, 86)",
-            // "rgb(75, 192, 192)",
-            // "rgb(54, 162, 235)",
-            // "rgb(153, 102, 255)",
-            // "rgb(201, 203, 207)",
-            // "rgb(255, 99, 132)",
-            // "rgb(255, 159, 64)",
-            // "rgb(255, 205, 86)",
-            // "rgb(75, 192, 192)",
-            // "rgb(54, 162, 235)",
-            // "rgb(153, 102, 255)",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
           ],
-          borderWidth: 0,
+          borderWidth: 1.5,
         },
       ],
     };
@@ -235,6 +230,7 @@
           labels: {
             // This more specific font property overrides the global property
             fontColor: "black",
+            fontSize: 20,
           },
         },
         scales: {
@@ -242,11 +238,19 @@
             {
               stacked: true,
               barPercentage: 1,
-              // barThickness: 3,
-              // maxBarThickness: 8,
+              barThickness: 3,
+              maxBarThickness: 8,
               minBarLength: 1,
               gridLines: {
                 offsetGridLines: true,
+              },
+              ticks: {
+                beginAtZero: true,
+                fontColor: "#000000",
+                fontFamily: "monospace",
+                fontSize: 15,
+                min: 0,
+                max: 20,
               },
             },
           ],
@@ -264,8 +268,8 @@
                 beginAtZero: true,
                 fontColor: "#000000",
                 fontFamily: "monospace",
-                fontSize: 15,
-                // fontWeigth
+                fontSize: 13,
+                fontWeigth: 25,
               },
             },
           ],
@@ -275,63 +279,89 @@
 
     const myChart = new Chart(document.getElementById("my_chart"), config);
 
-    // grafico pizza 
+    // grafico pie
 
-    data = {
-    datasets: [{
-        data: [dados2],
+    var fase1 =
+      Number(resposta[6].votos) +
+      Number(resposta[5].votos) +
+      Number(resposta[4].votos) +
+      Number(resposta[3].votos) +
+      Number(resposta[2].votos) +
+      Number(resposta[1].votos) +
+      Number(resposta[0].votos);
 
-    }],
+    var fase2 =
+      Number(resposta[12].votos) +
+      Number(resposta[11].votos) +
+      Number(resposta[10].votos) +
+      Number(resposta[9].votos) +
+      Number(resposta[8].votos) +
+      Number(resposta[7].votos);
 
-    // These labels appear in the legend and in the tooltips when hovering different arcs
-    labels: [
-        'Red',
-        'Yellow',
-        'Blue'
-    ]
-};
+    // console.log("Testando " + fase2);
+    // console.log("Testando " + fase1);
 
-const dados2 = {
-      labels: sessao1,
+    const dados2 = {
+      labels: ["yeah yeah yeah", "Fase seria!"],
       datasets: [
         {
-          data: qtd_votos,
-          label: "Grafico de albums",
-          backgroundColor: [
-            "#ffffff",
-            "#FA5901",
-            "#FAE607",
-            "#12F5FF",
-            "#0066DB",
-            "#6415DB",
-            "#0a0a0a",
-            "#E01200",
-            "#ED04FA",
-            "#E46609",
-            "#00E010",
-            "#8DAD00",
-            "#0AC2FF",
-            "#C10A00",
-          ],
+          data: [fase2, fase1],
+          backgroundColor: ["#00aedfbb", "#fd3640bb"],
+          borderColor: ["#000000", "#000000"],
+          // fill: true,
         },
       ],
     };
 
+    const config2 = {
+      type: "pie",
+      data: dados2,
 
-    var myPieChart = new Chart(my_chart2, {
-    type: 'pie',
-    data: sessao1
-    // options: options
-      });
+      options: {
+        legend: {
+          labels: {
+            fontColor: "black",
+            fontSize: 15,
+          },
+        },
+        responsive: true,
+        animation: { duration: 500 },
+        hoverMode: "index",
+        stacked: false,
+        title: {
+          display: false,
+        },
+        scales: {
+          yAxes: [
+            {
+              type: "pie",
+              display: true,
+              position: "left",
+              ticks: {
+                fontColor: "#000000",
+                fontFamily: "monospace",
+                fontSize: 15,
+              },
+            },
+            {
+              type: "pie",
+              display: false,
+              position: "right",
+              ticks: {
+                fontColor: "#000000",
+                fontFamily: "monospace",
+                fontSize: 15,
+              },
+              gridLines: {
+                drawOnChartArea: false,
+              },
+            },
+          ],
+        },
+      },
+    };
 
-    // And for a doughnut chart
-    //   var myDoughnutChart = new Chart(ctx, {
-    //   type: 'doughnut',
-    //   data: data,
-    //   options: options
-    // });
-
-    const myChartpie = new Chart(document.getElementById("my_chart2"), config);
+    const myChartpie = new Chart(document.getElementById("my_chart2"), config2);
 
     for (i = 0; i < resposta.length; i++) {
       var registro = resposta[i];
@@ -343,7 +373,7 @@ const dados2 = {
       // console.log(dados.datasets[0].data[i]);
     }
 
-    console.log(JSON.stringify(registro));
+    // console.log(JSON.stringify(registro));
 
     // var ctx = document.getElementById("my_chart").getContext("2d");
     // canvas_grafico.getContext("2d");
@@ -400,6 +430,4 @@ const dados2 = {
         );
       });
   }
-
-  
 </script>

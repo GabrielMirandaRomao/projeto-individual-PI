@@ -32,10 +32,13 @@
         </span>
 
         <div class="hello">
-          <h3>
-            Olá, <span id="b_usuario">usuário</span>! <br /><br />
-            Vi que seu album favorito é <span id="b_usuario_album">album</span>
-          </h3>
+          <div>
+            <h2>Olá, <span id="b_usuario">usuário</span>!</h2>
+          </div>
+          <div>
+            <h2>Album favorito é... <br /> 
+            <span id="b_usuario_album">album</span></h2>
+          </div>
         </div>
 
         <div class="btn-nav">
@@ -376,7 +379,7 @@
 
     function alertar(nome_album, id_album) {
       var limites = {
-        pouco_ouvido: 5 ,
+        pouco_ouvido: 5,
         bem_ouvido: 6,
         muito_ouvido: 9,
       };
