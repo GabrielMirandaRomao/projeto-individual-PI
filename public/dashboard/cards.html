@@ -36,8 +36,10 @@
             <h2>Olá, <span id="b_usuario">usuário</span>!</h2>
           </div>
           <div>
-            <h2>Album favorito é... <br /> 
-            <span id="b_usuario_album">album</span></h2>
+            <h2>
+              Album favorito é... <br />
+              <span id="b_usuario_album">album</span>
+            </h2>
           </div>
         </div>
 
@@ -386,18 +388,18 @@
 
       for (var posicao = 0; posicao < album.length; posicao++) {
         var quatidade_votos = qtd_votos[posicao];
-        if (quatidade_votos <= limites.pouco_ouvido) {
-          output_card_id[posicao].style.backgroundColor = "#ff7043";
-          output_numero_votos[posicao].innerHTML = `${quatidade_votos} votos`;
-          console.log("Pouco ouvido");
-        } else if (quatidade_votos <= limites.bem_ouvido) {
-          output_card_id[posicao].style.backgroundColor = "#5c6bc0";
-          output_numero_votos[posicao].innerHTML = `${quatidade_votos} votos`;
-          console.log("ouvido");
-        } else {
+        if (quatidade_votos >= limites.muito_ouvido) {
           output_card_id[posicao].style.backgroundColor = "#9ccc65";
           output_numero_votos[posicao].innerHTML = `${quatidade_votos} votos`;
-          console.log("Muito ouvido");
+          console.log("Muito ouvido - Mais votos");
+        } else if (quatidade_votos >= limites.bem_ouvido) {
+          output_card_id[posicao].style.backgroundColor = "#5c6bc0";
+          output_numero_votos[posicao].innerHTML = `${quatidade_votos} votos`;
+          console.log("ouvido - media de votos"); 
+        } else {
+          output_card_id[posicao].style.backgroundColor = "#ff7043";
+          output_numero_votos[posicao].innerHTML = `${quatidade_votos} votos`;
+          console.log("Pouco ouvido - Menos votos");
         }
       }
     }

@@ -45,7 +45,7 @@ header {
 header.sticky {
   padding: 5px 100px;
   background: #ffffffc0;
-  height: 15vh;
+  height: 13vh;
 }
 
 span .img_navbar {
@@ -115,15 +115,9 @@ header.sticky .navbar li .terceiro_link {
 
 header.sticky .navbar li .quarto_link {
   color: #fc4750;
-  /* border-bottom: 2px solid #000000; */
   font-weight: bolder;
   font-size: 25px;
 }
-
-/* header.sticky .navbar {
-  background-color: #eee8e8;
-  border-radius: 10px;
-} */
 
 .icon_submarine {
   width: 25px;
@@ -558,12 +552,14 @@ header.sticky .navbar li .quarto_link {
   outline: none;
   border: none;
   border-bottom: 2px solid #000000;
-  background-color: #00000000;
+  background-color: transparent;
 }
 
-input:-internal-autofill-selected {
-  background-color: #00000000;
+nput:-internal-autofill-selected {
+  background-color: none;
+  background-color: #ff4a4a;
 }
+
 
 /* label login e cadastro */
 .cadastro_container label,
@@ -599,7 +595,6 @@ select {
   font-size: 1rem;
   padding: 1em 4em 1em 1.5em;
   margin-top: 10px;
-  /* background: #00000093; */
   background-color: #161618;
   color: #ffffff;
   border: 0;
@@ -730,10 +725,9 @@ select {
 }
 
 .search {
-  /* background-color: #2a2b2b; */
   color: white;
   font-size: 16px;
-  /* padding: 16px 32px; */
+
   height: 80px;
   width: 80px;
   background-image: url("../assets/imgs/search.png");
@@ -745,7 +739,6 @@ select {
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
-  /* position: absolute; */
   position: fixed;
   height: 50vh;
   width: 40vw;
@@ -754,9 +747,9 @@ select {
   top: 25%;
   right: 30%;
   background-color: #000000d5;
-  /* background-image: radial-gradient(#fc3ab277, #c4b12277, #008fb777, #fc475077); */
   color: #ffffff;
   border-radius: 20px;
+  text-transform: capitalize;
 }
 
 .div_modal_btn {

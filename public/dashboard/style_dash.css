@@ -91,6 +91,12 @@ span .img_navbar {
   cursor: pointer;
 }
 
+#b_usuario,
+#b_usuario_album {
+  font-size: 25px;
+  text-transform: capitalize;
+}
+
 /* Header ----------------------- */
 
 /* pagina cards*/
@@ -200,18 +206,16 @@ span .img_navbar {
   flex-wrap: wrap;
   justify-content: center;
   position: relative;
-  width: 100%;
+  width: 90%;
   height: 20vh;
   margin-top: 20px;
   margin-left: 10rem;
   z-index: 1000;
-  /* tentar deixar melhor depois */
 }
 
 .perigo-frio {
   border: 2px solid #000000;
   background-color: #ff7043;
-  /* box-shadow: 0 5px 10px 0 #ff7043; */
   padding: 3%;
   height: 10vh;
 }

@@ -75,7 +75,11 @@ var musicas_albums = {
     "In my life",
     "If I need someone",
   ],
-  revolver: ["Eleanor Rigby", "", "", ""],
+  revolver: [
+    "Eleanor Rigby",
+    "Taxman", 
+    "Here, there and everywhere", 
+    "Got to get you into my life"],
   sgt_peppers: [
     "Sgt. pepper's lonely hearts club band",
     "With a little help from my friends",
@@ -85,7 +89,8 @@ var musicas_albums = {
   yellow_submarine: [
     "All you need is love", 
     "Yellow submarine", 
-    "", ""
+    "Hey bulldog", 
+    "All together"
   ],
   magical_mystery_tour: [
     "Hello, Goodbye",
@@ -111,8 +116,8 @@ var musicas_albums = {
     "I've got a feeling", 
     "Get back"
   ],
-  the_beatles_1962_1966: ["Todas", "pois", "tem", "as melhores"],
-  the_beatles_1967_1970: ["Todas", "pois", "tem", "as melhores"],
+  the_beatles_1962_1966: ["Todas", "pois", "só tem", "as melhores!"],
+  the_beatles_1967_1970: ["Todas", "pois", "só tem", "as melhores!"],
 };
 
 // -------------------------
@@ -157,7 +162,7 @@ function mostrar_fase_um() {
   }
 
   document.getElementById("output_albums").innerHTML = `
-  <h4> Você vai gostar de ouvir esse album </h4><br />
+  <h4> Você vai gostar de ouvir esse album! </h4><br />
     <img class="img_album" src="${primeira_fase[random_number]}" alt="">
     <a href=${links_primeira_fase[random_number]}>
         <img class="img_link" src="./assets/imgs/icon/loader.gif" alt="">
@@ -208,7 +213,7 @@ function mostrar_fase_dois() {
   }
 
   document.getElementById("output_albums").innerHTML = `
-  <h4> Você vai gostar de ouvir esse album </h4><br />
+  <h4> Você vai gostar de ouvir esse album! </h4><br />
   <img class="img_album" src="${segunda_fase[random_number]}" alt="">
   <a href=${links_segunda_fase[random_number]}>
         <img class="img_link" src="./assets/imgs/icon/loader.gif" alt="">
@@ -216,16 +221,20 @@ function mostrar_fase_dois() {
 }
 
 function mostrar_ambas() {
-  var random_number = Math.floor(Math.random() * 2);
+  var random_number = Math.floor(Math.random() * 4);
 
   var duas_fases = [
     "assets/imgs/albums/the_beatles_1962_1966.jpg",
     "assets/imgs/albums/the_beatles_1967_1970.jpg",
+    "assets/imgs/albums/past_masters_vol1.jpg",
+    "assets/imgs/albums/past_masters_vol2.jpg",
   ];
 
   var links = [
     "https://open.spotify.com/album/6126O4XLYAfzU3961ziahP",
     "https://open.spotify.com/album/1cTeNkeINtXiaMLlashAKs",
+    "https://open.spotify.com/album/3GmCXW10kLxmZrEY0JpRlw",
+    "https://open.spotify.com/album/3GmCXW10kLxmZrEY0JpRlw",
   ];
 
   document.getElementById("div_albums").innerHTML = "";
@@ -252,7 +261,7 @@ function mostrar_ambas() {
   }
 
   document.getElementById("output_albums").innerHTML = `
-  <h4> Você vai gostar de ouvir esse album </h4><br />
+  <h4> Você vai gostar de ouvir esse album! </h4><br />
     <img class="img_album" src="${duas_fases[random_number]}" alt="">
     <a href=${links[random_number]}>
         <img class="img_link" src="./assets/imgs/icon/loader.gif" alt="">
