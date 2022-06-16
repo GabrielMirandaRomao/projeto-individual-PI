@@ -156,3 +156,7 @@ values
     (null, 'gustavo', 'teste41@gmail.com', '12345678', 8),
     (null, 'caio', 'teste36@gmail.com', '12345678', 8),
     (null, 'alex', 'teste37@gmail.com', '12345678', 13);
+
+insert into usuarios 
+values 
+    (null, 'caio', 'teste36@gmail.com', '12345678', 3),

@@ -10,7 +10,7 @@ setInterval(function () {
   if (counter > 4) {
     counter = 1;
   }
-}, 8000);
+}, 4000);
 
 // ------------------------
 function mostrar_musica(musicas_albums) {
@@ -22,7 +22,7 @@ function mostrar_musica(musicas_albums) {
       <img class="img_fechar_modal" src="./assets/imgs/icon/close.png" alt=""> 
     </button>
   </div>
-  <h3> Minhas músicas favoritas desse album!</h3>
+  <h3>Minhas músicas favoritas desse album!</h3>
   <ul>
     <li><h3>${musicas_albums[0]}<h3/></li>
     <li><h3>${musicas_albums[1]}<h3/></li>
@@ -79,7 +79,8 @@ var musicas_albums = {
     "Eleanor Rigby",
     "Taxman", 
     "Here, there and everywhere", 
-    "Got to get you into my life"],
+    "Got to get you into my life"
+  ],
   sgt_peppers: [
     "Sgt. pepper's lonely hearts club band",
     "With a little help from my friends",
@@ -162,7 +163,7 @@ function mostrar_fase_um() {
   }
 
   document.getElementById("output_albums").innerHTML = `
-  <h4> Você vai gostar de ouvir esse album! </h4><br />
+  <h4>Você vai gostar de ouvir esse album</h4>
     <img class="img_album" src="${primeira_fase[random_number]}" alt="">
     <a href=${links_primeira_fase[random_number]}>
         <img class="img_link" src="./assets/imgs/icon/loader.gif" alt="">
@@ -213,7 +214,7 @@ function mostrar_fase_dois() {
   }
 
   document.getElementById("output_albums").innerHTML = `
-  <h4> Você vai gostar de ouvir esse album! </h4><br />
+  <h4> Você vai gostar de ouvir esse album</h4>
   <img class="img_album" src="${segunda_fase[random_number]}" alt="">
   <a href=${links_segunda_fase[random_number]}>
         <img class="img_link" src="./assets/imgs/icon/loader.gif" alt="">
@@ -261,7 +262,7 @@ function mostrar_ambas() {
   }
 
   document.getElementById("output_albums").innerHTML = `
-  <h4> Você vai gostar de ouvir esse album! </h4><br />
+  <h4> Você vai gostar de ouvir esse album</h4>
     <img class="img_album" src="${duas_fases[random_number]}" alt="">
     <a href=${links[random_number]}>
         <img class="img_link" src="./assets/imgs/icon/loader.gif" alt="">
